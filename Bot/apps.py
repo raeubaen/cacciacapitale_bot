@@ -20,10 +20,10 @@ class BotConfig(AppConfig):
     name = 'Bot'
 
     def ready(self):
-        import Bot.bot_thread as bot_thread
-        from .models import Bot
-        from .exceptions import UniqueObjectError
         if not (set(sys.argv) & set(["makemigrations", "migrate", "collectstatic", "createsuperuser", "shell"])):
+            import Bot.bot_thread as bot_thread
+            from .models import Bot
+            from .exceptions import UniqueObjectError
             if not Bot.objects.exists():
                 try:
                     Bot.objects.create(**bot_config)
