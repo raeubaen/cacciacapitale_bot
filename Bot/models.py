@@ -70,6 +70,7 @@ class Queue(models.Model):
 
 
 class Node(models.Model):
+  id = models.BigIntegerField(primary_key = True)
   queue = models.ForeignKey(
     Queue,
     on_delete=models.CASCADE,
