@@ -1,0 +1,8 @@
+INFO SUI PARTECIPANTI:
+id: 788342587
+phone: 393772622016
+name: l
+surname: p
+queue: processing
+(Andrea Donato: Not Asked), (Ruben Gargiulo: Accepted)
+
