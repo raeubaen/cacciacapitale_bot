@@ -62,9 +62,8 @@ ist = istances(classes_list)
 
 key_list = create_key_list(ist)
 
-if not Key.objects.all(): #if db does not contain keys of questions asked
-    for key in key_list:
-        Key.objects.create(key=key)
+for key in key_list:
+    Key.objects.get_or_create(key=key)
 
 
 conv_handler = ConversationHandler(
