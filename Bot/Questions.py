@@ -60,8 +60,8 @@ class Accept:  # BEFORE ASKING ANY DATA
                 return False
 
     filter = Filter()
-    key = "id"
-
+    key_verbose_name = "Telegram Chat ID"
+    key_name = "id"
 
 class Phone:
     def make(self, update, context):
@@ -85,8 +85,8 @@ class Phone:
         return self.make_new(update, context)
 
     filter = Filters.contact
-    key = "phone"
-
+    key_verbose_name = "Numero di Telefono"
+    key_name = "phone"
 
 class Name:
     def make(self, update, context):
@@ -108,8 +108,8 @@ class Name:
                 return False
 
     filter = Filter()
-    key = "name"
-
+    key_verbose_name = "Nome"
+    key_name = "name"
 
 class Surname:
     def make(self, update, context):
@@ -123,7 +123,8 @@ class Surname:
         return self.make_new(update, context)
 
     filter = Name.filter
-    key = "surname"
+    key_verbose_name = "Cognome"
+    key_name = "surname"
 
 
 class Age:
@@ -146,7 +147,8 @@ class Age:
                 return False
 
     filter = Filter()
-    key = "age"
+    key_verbose_name = "Età"
+    key_name = "age"
 
 
 class Uni:
@@ -172,7 +174,8 @@ class Uni:
                 return False
 
     filter = Filter()
-    key = "uni"
+    key_verbose_name = "Università"
+    key_name = "uni"
 
 
 class Time:
@@ -190,8 +193,8 @@ class Time:
         return self.make_new(update, context)
 
     filter = Uni.filter
-    key = "tframe"
-
+    key_verbose_name = "Tempistica"
+    key_name = "tframe"
 
 class Perc:
     def make(self, update, context):
@@ -216,7 +219,8 @@ class Perc:
                 return False
 
     filter = Filter()
-    key = "perc"
+    key_verbose_name = "Probabilità di presenza (%)"
+    key_name = "perc"
 
 
 # Handling the process of assigning a captain
@@ -238,10 +242,10 @@ class Grouping:  # others questions are in personalQuestions.py
                 "Contatta il comitato, ti saranno date istruzioni in merito. "
                 "Se invece vuoi inserirti in una squadra già presente, clicca /stop, poi /start e ricomincia."
             )
-            queue = Queue.objects.create(situation="requested own team", hunter=hunter)
+            queue = Queue.objects.create(situation="Richiesta creazione propria squadra", hunter=hunter)
             return self.make_new(update, context)
         cap_anag = choice
-        queue = Queue.objects.create(situation="processing", hunter=hunter)
+        queue = Queue.objects.create(situation="In attesa", hunter=hunter)
         create_nodes(cap_anag, queue)
         handle_queue(hunter, context)
         return self.make_new(update, context)
@@ -258,4 +262,5 @@ class Grouping:  # others questions are in personalQuestions.py
                 return False
 
     filter = Filter()
-    key = "queue"
+    key_verbose_name = "Status dell'iscrizione"
+    key_name = "queue"

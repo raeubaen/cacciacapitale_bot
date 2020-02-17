@@ -26,11 +26,11 @@ def info_summary(chat_id=None, hunter=None, to_exclude=[]):
         return None
     if hunter is None:  # if hunter is specified by id
         hunter = Hunter.objects.get(id=chat_id)
-    key_str_list = [key.key for key in key_query_set if key.key not in to_exclude]
-    for key_str in key_str_list:
+    key_list = [key for key in key_query_set if key.name not in to_exclude]
+    for key in key_list:
         try:
-            value = getattr(hunter, key_str)
-            item = f"{key_str}: {value}"
+            value = getattr(hunter, key.name)
+            item = f"{key.verbose_name}: {value}"
         except AttributeError:
             logging.debug("", exc_info=True)
         else:

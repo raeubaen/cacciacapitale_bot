@@ -3,7 +3,7 @@ from .Questions import Accept, Phone, Name, Surname, Age, Uni, Time, Perc, Group
 from .models import Key, Hunter, Bot_Table
 from bot_site.settings import DEBUG
 from .utils import info_summary
-
+import logging
 
 # what happens when conversation_handler.END is triggered
 def end_conversation(update, context):
@@ -57,7 +57,9 @@ def create_key_list(ist_list):  # gives back a list of keys contained in classes
     key_list = []
     for ist in ist_list:
         try:
-            key_list.append(ist.key)
+            key_list.append({
+                "name": ist.key_name,
+                "verbose_name": ist.key_verbose_name})
         except AttributeError:
             logging.debug("", exc_info=True)
     return key_list
@@ -69,8 +71,9 @@ classes_list.insert(0, Accept)
 ist = istances(classes_list)
 
 key_list = create_key_list(ist)
+Key.objects.all().delete()
 for key in key_list:
-    Key.objects.get_or_create(key=key)
+    Key.objects.create(**key)
 
 conv_handler = ConversationHandler(
     entry_points=[CommandHandler("start", ist[0].make)],
