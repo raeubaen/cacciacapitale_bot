@@ -1,31 +1,33 @@
 {% extends 'base.html' %}
 
-{% block title %}Home{% endblock %}
-
 {% block content %}
 <style>
   body {
-    background-color: black
+    background-image: url("https://www.criptozoo.com/sites/default/files/copertine/moby01.jpg");
+    background-repeat: no-repeat;
+    height: 100%;
+    background-size: contain;
   }
 </style>
-<!--- Ciao {{ user.username }}! Questa è l'interfaccia principale di EMME --->
 <div class="row">
   <div class="column" style="text-align:center">
-    <form action="{% url 'logout' %}" method="GET"><input type="submit" class="buttons" value="Logout"></form><br>
-    <div style="width:400px; display: inline-block">
-      <div style="float: left; width: 200px">
-        <form action="download_players"><input type="submit" class="buttons" value="Scarica i membri"></form><br>
+    <h1 style="color: #007DE1">OPERAZIONE MOBY DICK</h1>
+    <h2 style="color: #007DE1">Amministrazione del Bot per le iscrizioni</h2><br>
+    <form action="{% url 'logout' %}" method="GET"><input type="submit" class="buttons" value="Logout"></form><br><br>
+    <div style="width: 80%; display: inline-block">
+      <div style="float: left; width: 40%">
+        <form action="download_players"><input type="submit" class="buttons" value="Scarica i membri"></form>
       </div>
-      <div style="float: left; width: 200px">
-        <form action="download_teams"><input type="submit" class="buttons" value="Scarica le squadre"></form><br>
+      <div style="float: right; width: 40%">
+        <form action="download_teams"><input type="submit" class="buttons" value="Scarica le squadre"></form>
       </div>
     </div>
-    <br>
-    <div style="width:400px; display: inline-block">
-      <div style="float: left; width: 200px">
+    <br><br><br>
+    <div style="width: 80%; display: inline-block">
+      <div style="float: left; width: 40%">
         <form action="reset"><input type="submit" class="buttons" value="Reset"></form>
       </div>
-      <div style="float: left; width: 200px">
+      <div style="float: right; width: 40%">
         <form action="restart"><input type="submit" class="buttons" value="Restart"></form>
       </div>
     </div>
