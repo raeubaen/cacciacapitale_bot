@@ -5,26 +5,33 @@ from bot_site.settings import DEBUG
 from .utils import info_summary
 
 
-#what happens when conversation_handler.END is triggered
+# what happens when conversation_handler.END is triggered
 def end_conversation(update, context):
     admin_id = Bot_Table.objects.first().admin_id
     if DEBUG:
-      context.bot.send_message(
-        chat_id=admin_id,
-        text=f"Nuovo iscritto:\n{info_summary(chat_id=update.message.chat_id)}")
-    update.message.reply_text("Tutto perfetto, richiesta di iscrizione effettuata!\nTi terremo aggiornato/a. Grazie e a presto!")
+        context.bot.send_message(
+            chat_id=admin_id,
+            text=f"Nuovo iscritto:\n{info_summary(chat_id=update.message.chat_id)}",
+        )
+    update.message.reply_text(
+        "Tutto perfetto, richiesta di iscrizione effettuata!\nTi terremo aggiornato/a. Grazie e a presto!"
+    )
     return ConversationHandler.END
 
 
-#callback for /stop command
+# callback for /stop command
 def cancel(update, context):
     hunter = Hunter.objects.get(id=update.message.chat_id)
     hunter.delete()
-    update.message.reply_text("Tutti i tuoi dati sono stati rimossi; per ricominciare premi /start")
+    update.message.reply_text(
+        "Tutti i tuoi dati sono stati rimossi; per ricominciare premi /start"
+    )
     return ConversationHandler.END
 
 
-def istances(classes_list):  # makes the conv handler work - connects make, process and new questions
+def istances(
+    classes_list
+):  # makes the conv handler work - connects make, process and new questions
     ist = [cls() for cls in classes_list]
     for i in range(len(ist)):
         ist[i].num = i
@@ -55,7 +62,8 @@ def create_key_list(ist_list):  # gives back a list of keys contained in classes
             logging.debug("", exc_info=True)
     return key_list
 
-#classes_list = [Phone, Grouping]
+
+# classes_list = [Phone, Grouping]
 classes_list = [Phone, Name, Surname, Age, Uni, Time, Perc, Grouping]
 classes_list.insert(0, Accept)
 ist = istances(classes_list)

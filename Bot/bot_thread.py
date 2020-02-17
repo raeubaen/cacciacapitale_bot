@@ -11,6 +11,7 @@ from .models import Bot_Table
 from .TeamHandling import cap_queue_callback
 from .models import Captain
 
+
 def not_hand_exc(exctype, value, trace_back):
     logging.error(
         "Uncaught Exception: Warning!!", exc_info=(exctype, value, trace_back)
@@ -49,9 +50,11 @@ class BotUpdateQueue(object):
         return setattr(self.instance, name)
 
 
-#callback for /id command
+# callback for /id command
 def get_id(update, context):
-    update.message.reply_text(f"Il tuo chat_id con questo bot è: {update.message.chat_id}")
+    update.message.reply_text(
+        f"Il tuo chat_id con questo bot è: {update.message.chat_id}"
+    )
 
 
 def run():
@@ -67,13 +70,15 @@ def run():
     BotUpdateQueue().queue = update_queue
     dp = Dispatcher(bot, update_queue, use_context=True)
 
-    if not Captain.objects.all(): #if db does not contain captains
-        with open("captains.txt", "r", encoding="utf-8") as in_file: #cap1_name - cap1_id, ...
-          entries = in_file.read().replace("\n", "").split(",")
+    if not Captain.objects.all():  # if db does not contain captains
+        with open(
+            "captains.txt", "r", encoding="utf-8"
+        ) as in_file:  # cap1_name - cap1_id, ...
+            entries = in_file.read().replace("\n", "").split(",")
         for entry in entries:
-          anagraphic, id_str = entry.split(" - ")
-          id = int(id_str)
-          Captain.objects.create(id=id, anagraphic=anagraphic)
+            anagraphic, id_str = entry.split(" - ")
+            id = int(id_str)
+            Captain.objects.create(id=id, anagraphic=anagraphic)
 
     dp.add_handler(CommandHandler("id", get_id))
     dp.add_handler(CallbackQueryHandler(cap_queue_callback))
@@ -88,6 +93,7 @@ def run():
         webhook_url = "https://cacciacapitale.herokuapp.com/bot/"
     if DEBUG:  # in localhost
         from pyngrok import ngrok
+
         ngrok_url = ngrok.connect(port=8000)
         webhook_url = ngrok_url.replace("http", "https") + "/bot/"
     req = requests.post(
