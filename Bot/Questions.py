@@ -6,7 +6,7 @@ from telegram import (
 )
 from telegram.ext import (ConversationHandler, Filters, BaseFilter)
 from Bot.utils import already_in
-from .models import Captain, Hunter, Bot, Queue
+from .models import Captain, Hunter, Bot_Table, Queue
 from emoji import emojize
 import random
 from .utils import cap_anag_list
@@ -220,7 +220,7 @@ class Perc:
 # Handling the process of assigning a captain
 class Grouping:  # others questions are in personalQuestions.py
     def make(self, update, context):
-        MAX_MEMBERS_PER_TEAM = Bot.objects.first().max_team_size
+        MAX_MEMBERS_PER_TEAM = Bot_Table.objects.first().max_team_size
         BUTTONS = [[i] for i in cap_anag_list(MAX_MEMBERS_PER_TEAM)]
         random.shuffle(BUTTONS)
         BUTTONS.insert(0, ["Crea la tua squadra"])
@@ -248,7 +248,7 @@ class Grouping:  # others questions are in personalQuestions.py
         def filter(self, message):
             try:
                 txt = message.text
-                MAX_MEMBERS_PER_TEAM = Bot.objects.first().max_team_size
+                MAX_MEMBERS_PER_TEAM = Bot_Table.objects.first().max_team_size
                 flat_buttons = cap_anag_list(MAX_MEMBERS_PER_TEAM)
                 flat_buttons.insert(0, "Crea la tua squadra")
                 return txt in flat_buttons

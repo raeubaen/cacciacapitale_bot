@@ -1,13 +1,13 @@
 from telegram.ext import MessageHandler, Filters, ConversationHandler, CommandHandler
 from .Questions import Accept, Phone, Name, Surname, Age, Uni, Time, Perc, Grouping
-from .models import Key, Hunter, Bot
+from .models import Key, Hunter, Bot_Table
 from bot_site.settings import DEBUG
 from .utils import info_summary
 
 
 #what happens when conversation_handler.END is triggered
 def end_conversation(update, context):
-    admin_id = Bot.objects.first().admin_id
+    admin_id = Bot_Table.objects.first().admin_id
     if DEBUG:
       context.bot.send_message(
         chat_id=admin_id,
