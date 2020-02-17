@@ -55,16 +55,14 @@ def create_key_list(ist_list):  # gives back a list of keys contained in classes
             logging.debug("", exc_info=True)
     return key_list
 
-
+#classes_list = [Phone, Grouping]
 classes_list = [Phone, Name, Surname, Age, Uni, Time, Perc, Grouping]
 classes_list.insert(0, Accept)
 ist = istances(classes_list)
 
-'''
 key_list = create_key_list(ist)
 for key in key_list:
     Key.objects.get_or_create(key=key)
-'''
 
 conv_handler = ConversationHandler(
     entry_points=[CommandHandler("start", ist[0].make)],
