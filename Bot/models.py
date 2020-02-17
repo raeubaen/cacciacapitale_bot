@@ -1,6 +1,6 @@
 from django.db import models
 
-class Bot(models.Model):
+class Bot_Table(models.Model):
     id = models.IntegerField(
         unique=True, primary_key=True, default=1
     )  # to be sure there's only one instance of the model

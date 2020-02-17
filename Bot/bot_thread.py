@@ -7,7 +7,7 @@ from telegram.ext import CommandHandler, CallbackQueryHandler
 import threading
 from bot_site.settings import DEBUG
 import requests
-from .models import Bot as BotDbTable
+from .models import Bot_Table
 from .TeamHandling import cap_queue_callback
 from .models import Captain
 
@@ -58,7 +58,7 @@ def run():
     from .Conversation import conv_handler, cancel
 
     # importing data from database
-    bot_db_table = BotDbTable.objects.first()
+    bot_db_table = Bot_Table.objects.first()
     token = bot_db_table.token
 
     # initializing
