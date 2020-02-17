@@ -8,7 +8,6 @@ import threading
 from bot_site.settings import DEBUG
 import requests
 from .models import Bot as BotDbTable
-from .Conversation import conv_handler, cancel
 from .TeamHandling import cap_queue_callback
 from .models import Captain
 
@@ -56,6 +55,8 @@ def get_id(update, context):
 
 
 def run():
+    from .Conversation import conv_handler, cancel
+
     # importing data from database
     bot_db_table = BotDbTable.objects.first()
     token = bot_db_table.token
