@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Captain, Queue, Hunter, Key, Bot
+from .models import Captain, Queue, Hunter, Key, Bot_Table
 
 class Hunter_Inline(admin.StackedInline):
     model = Hunter
@@ -22,5 +22,5 @@ class Hunter_Admin(admin.ModelAdmin):
 admin.site.register(Captain, Captain_Admin)
 admin.site.register(Hunter, Hunter_Admin)
 admin.site.register(Key)
-admin.site.register(Bot)
+admin.site.register(Bot_Table)
 

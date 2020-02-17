@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
 from django.shortcuts import render, redirect
-from Bot.models import Hunter, Captain, Key, Bot
+from Bot.models import Hunter, Captain, Key, Bot_Table
 import Bot.utils as utils
 import os
 from django.http import HttpResponse
@@ -35,7 +35,7 @@ class webhook(View):
 
 
 def get_update(text):
-    bot = telegramBot(Bot.objects.first().token)
+    bot = telegramBot(Bot_Table.objects.first().token)
     update = telegramUpdate.de_json(json.loads(text), bot)
     update_queue = BotUpdateQueue().queue
     update_queue.put(update)

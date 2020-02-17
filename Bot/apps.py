@@ -22,14 +22,14 @@ class BotConfig(AppConfig):
     def ready(self):
         if not (set(sys.argv) & set(["makemigrations", "migrate", "collectstatic", "createsuperuser", "shell"])):
             import Bot.bot_thread as bot_thread
-            from .models import Bot
+            from .models import Bot_Table
             from .exceptions import UniqueObjectError
-            if not Bot.objects.exists():
+            if not Bot_Table.objects.exists():
                 try:
-                    Bot.objects.create(**bot_config)
+                    Bot_Table.objects.create(**bot_config)
                 except UniqueObjectError:
                     logging.debug("", exc_info=True)
-            bot = Bot.objects.first()
+            bot = Bot_Table.objects.first()
             _hd = adminHandler(token=bot.token, admin_id=bot.admin_id)
             level = logging.ERROR
             _hd.setLevel(level)
