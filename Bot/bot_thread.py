@@ -85,7 +85,7 @@ def run():
     thread.start()
 
     if not DEBUG:  # in production
-        webhook_url = "https://targhemembri.herokuapp.com/bot/"
+        webhook_url = "https://cacciacapitale.herokuapp.com/bot/"
     if DEBUG:  # in localhost
         from pyngrok import ngrok
         ngrok_url = ngrok.connect(port=8000)
