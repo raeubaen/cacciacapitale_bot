@@ -1,3 +1,4 @@
+...
 TUTTO IL NECESSARIO PER IL DEPLOYMENT NON E' QUI, VA PRESO DALLE ALTRE CARTELLE
 Versione di Python:
 3.6.9 o comunque >= 3.6 - salvata in runtime.txt
