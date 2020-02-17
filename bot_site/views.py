@@ -23,9 +23,9 @@ def reset(request):
     import sys
     from django.apps import apps
 
-    models = apps.get_app_config("T").models
+    models = apps.get_app_config("Bot").models
     for mod in models:  # da testare
-        mod.objects.all.delete()  # da testare
+        models[mod].objects.all().delete()  # da testare
     os.execl(sys.argv[0], *sys.argv)
 
 class webhook(View):
