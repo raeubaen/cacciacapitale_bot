@@ -4,13 +4,14 @@ from telegram import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
 )
-from telegram.ext import (ConversationHandler, Filters, BaseFilter)
+from telegram.ext import ConversationHandler, Filters, BaseFilter
 from Bot.utils import already_in
 from .models import Captain, Hunter, Bot_Table, Queue
 from emoji import emojize
 import random
 from .utils import cap_anag_list
 from .TeamHandling import create_nodes, handle_queue
+
 
 class Accept:  # BEFORE ASKING ANY DATA
     def make(self, update, context):
@@ -22,7 +23,7 @@ class Accept:  # BEFORE ASKING ANY DATA
             return ConversationHandler.END
         _markup = ReplyKeyboardMarkup([["Si"], ["No"]], one_time_keyboard=True)
         update.message.reply_text("Iscrizioni non attive - per favore non proseguire")
-        '''
+        """
             "Benvenuto nel Bot di Iscrizione a Caccia Capitale.\n"
             " Qui sarai guidato nella compilazione dei campi richiesti.\n"
             "Ti preghiamo di inserire informazioni corrette e veritiere:"
@@ -32,7 +33,7 @@ class Accept:  # BEFORE ASKING ANY DATA
             " scriva /stop. \nFatto ció potrai comunque ricompilare il modulo scrivendo /start.\n"
             "I dati che inserisci verranno inviati in via definitiva ai capitani alle ore 12.00 del 19/12."
             " Per qualsiasi dubbio, recati su https://cacciacapitale.it"
-        '''
+        """
         update.message.reply_text(
             ""
             " Per prima cosa, ti preghiamo di accettare il trattamento dei dati personali [Si/No].\n"
@@ -216,6 +217,7 @@ class Perc:
 
     filter = Filter()
     key = "perc"
+
 
 # Handling the process of assigning a captain
 class Grouping:  # others questions are in personalQuestions.py

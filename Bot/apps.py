@@ -17,13 +17,25 @@ class adminHandler(logging.Handler):
 
 
 class BotConfig(AppConfig):
-    name = 'Bot'
+    name = "Bot"
 
     def ready(self):
-        if not (set(sys.argv) & set(["makemigrations", "migrate", "collectstatic", "createsuperuser", "shell"])):
+        if not (
+            set(sys.argv)
+            & set(
+                [
+                    "makemigrations",
+                    "migrate",
+                    "collectstatic",
+                    "createsuperuser",
+                    "shell",
+                ]
+            )
+        ):
             import Bot.bot_thread as bot_thread
             from .models import Bot_Table
             from .exceptions import UniqueObjectError
+
             if not Bot_Table.objects.exists():
                 try:
                     Bot_Table.objects.create(**bot_config)

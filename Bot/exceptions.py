@@ -1,6 +1,7 @@
 class CannotMove(Exception):
-  pass
+    pass
+
 
 class UniqueObjectError(Exception):
-  pass
+    pass
 
