@@ -18,10 +18,11 @@ class Bot_Table(models.Model):
 
 
 class Key(models.Model):
-    key = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, null=True)
+    verbose_name = models.CharField(max_length=50, null=True)
 
     def __str__(self):
-        return self.key
+        return self.verbose_name
 
 
 class Person(models.Model):

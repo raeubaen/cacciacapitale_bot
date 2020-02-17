@@ -1,5 +1,5 @@
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
-from .utils import info_summary
+from .utils import info_summary, anag
 from .models import Captain, Hunter, Node
 
 # Initializes the status of a member, given the captain chosen on the chat
@@ -7,11 +7,11 @@ def create_nodes(cap_anag, queue):
     cap_list = Captain.objects.all()
     for i in range(len(cap_list)):
         Node.objects.create(
-            queue=queue, captain=cap_list[i], number=i, status="Not Asked"
+            queue=queue, captain=cap_list[i], number=i, status="Non chiesto"
         )
     asked_captain = Captain.objects.get(anagraphic=cap_anag)
     asked_node = Node.objects.get(captain=asked_captain)
-    asked_node.status = "Asked"
+    asked_node.status = "Chiesto"
     asked_node.save()
 
 
@@ -24,9 +24,9 @@ def handle_queue(hunter, context):
     hunter_id = hunter.id
     for i in range(qlen):
         if (
-            status_list[i] == "Not Asked"
-            and status_list[(i - 1) % qlen] == "Refused"
-            or status_list[i] == "Asked"
+            status_list[i] == "Non chiesto"
+            and status_list[(i - 1) % qlen] == "Rifiutato"
+            or status_list[i] == "Chiesto"
         ):
             node = node_list[i]  # node is chosen, if possible
             break
@@ -36,7 +36,7 @@ def handle_queue(hunter, context):
             text="Ci dispiace, la tua iscrizione è stata negata "
             "(le squadre potrebbero essere al completo). Puoi comunque partecipare alla caccia creando una nuova squadra.",
         )
-        queue.situation = "refused by all"
+        queue.situation = "Rifiutato"
         queue.save()
         return
     # making the question to chosen captain
@@ -46,7 +46,7 @@ def handle_queue(hunter, context):
         [InlineKeyboardButton("No", callback_data="*".join(["No", str(hunter_id)]))],
     ]
     reply_markup = InlineKeyboardMarkup(buttons_list)
-    node.status = "Asked"
+    node.status = "Chiesto"
     node.save()
     context.bot.send_message(
         chat_id=cap_id,
@@ -70,19 +70,20 @@ def cap_queue_callback(update, context):
     node = hunter.queue.node_set.get(captain=cap)
 
     if answer == "Si":
-        node.status = "Accepted"
+        node.status = "Accettato"
         hunter.captain = cap
-        context.bot.send_message(chat_id=cap_id, text="Perfetto, iscrizione accettata")
+        context.bot.send_message(chat_id=cap_id, text=f"Perfetto, hai accettato {anag(hunter)} nella tua squadra")
         context.bot.send_message(
             chat_id=hunter_id,
             text="La tua iscrizione è stata confermata.\n"
             "Sei stato inserito nella squadra di: " + cap.anagraphic,
         )
-        hunter.queue.situation = "accepted by someone"
+        hunter.queue.situation = f"Accettato da {cap.anagraphic}"
+        hunter.queue.save()
         node.save()
         hunter.save()
     if answer == "No":
-        node.status = "Refused"
+        node.status = "Rifiutato"
         context.bot.send_message(chat_id=cap_id, text="Perfetto, iscrizione rifiutata")
         node.save()
         handle_queue(hunter, context)
