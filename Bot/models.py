@@ -61,9 +61,21 @@ class Queue(models.Model):
         Hunter, on_delete=models.CASCADE, null=True, blank=True, parent_link=True
     )
 
+<<<<<<< HEAD
+  def __str__(self):
+    situation = f"{self.situation}\n"
+
+    def cap(self, status):
+      cap_list = self.node_set.filter(status=status).values_list("captain", flat=True)
+      return f"{status}: [{", ".join(map(str, cap_list))}]\n"
+
+    s = situation + cap("Accettato") + cap("Rifiutato") + cap("Chiesto") + cap("Non chiesto")
+    return s
+=======
     def __str__(self):
         s = f"{self.situation}\n" + ", ".join(map(str, self.node_set.all()))
         return s
+>>>>>>> 1d98b80de2a71e399af780ace934da6e7d990ce6
 
 
 class Node(models.Model):
