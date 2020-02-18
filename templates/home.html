@@ -1,18 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% load static %}
 <style>
   body {
-    background-image: url("https://www.criptozoo.com/sites/default/files/copertine/moby01.jpg");
+    background-color: white ;
+    background-image: url({% static "moby01.jpg" %});
     background-repeat: no-repeat;
+    background-size: auto 100vh;
+    background-position: center;
     height: 100%;
-    background-size: contain;
   }
 </style>
 <div class="row">
   <div class="column" style="text-align:center">
-    <h1 style="color: #007DE1">OPERAZIONE MOBY DICK</h1>
-    <h2 style="color: #007DE1">Amministrazione del Bot per le iscrizioni</h2><br>
+    <h1>OPERAZIONE MOBY DICK</h1>
+    <h2>Amministrazione del Bot per le iscrizioni</h1><br><br><br>
     <form action="{% url 'logout' %}" method="GET"><input type="submit" class="buttons" value="Logout"></form><br><br>
     <div style="width: 80%; display: inline-block">
       <div style="float: left; width: 40%">
@@ -31,7 +34,6 @@
         <form action="restart"><input type="submit" class="buttons" value="Restart"></form>
       </div>
     </div>
-    <hr>
     <form action="add_captain"><input type="submit" class="buttons" value="Inserimento Capitano"></form><br>
     <br><br>
   </div>
