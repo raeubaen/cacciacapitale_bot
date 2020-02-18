@@ -61,15 +61,15 @@ class Queue(models.Model):
         Hunter, on_delete=models.CASCADE, null=True, blank=True, parent_link=True
     )
 
-  def __str__(self):
-    situation = f"{self.situation}\n"
+    def __str__(self):
+      situation = f"{self.situation}\n"
 
-    def cap(self, status):
-      cap_list = self.node_set.filter(status=status).values_list("captain", flat=True)
-      return f"{status}: [{", ".join(map(str, cap_list))}]\n"
+      def cap(self, status):
+        cap_list = self.node_set.filter(status=status).values_list("captain", flat=True)
+        return f"{status}: [{", ".join(map(str, cap_list))}]\n"
 
-    s = situation + cap("Accettato") + cap("Rifiutato") + cap("Chiesto") + cap("Non chiesto")
-    return s
+      s = situation + cap("Accettato") + cap("Rifiutato") + cap("Chiesto") + cap("Non chiesto")
+      return s
 
 
 class Node(models.Model):
