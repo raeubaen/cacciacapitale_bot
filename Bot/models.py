@@ -64,11 +64,12 @@ class Queue(models.Model):
     def __str__(self):
       situation = f"{self.situation}\n"
 
-      def cap(self, status):
-        cap_list = self.node_set.filter(status=status).values_list("captain", flat=True)
-        return f"{status}: [{", ".join(map(str, cap_list))}]\n"
+      def cap(status):
+        node_list = self.node_set.filter(status=status)
+        cap_str_list = [str(node.captain) for node in node_list]
+        return f"  {status}: [{', '.join(cap_str_list)}]"
 
-      s = situation + cap("Accettato") + cap("Rifiutato") + cap("Chiesto") + cap("Non chiesto")
+      s = situation + "\n".join(map(cap, ["Accettato", "Rifiutato", "Chiesto", "Non chiesto"]))
       return s
 
 
