@@ -21,8 +21,11 @@ def end_conversation(update, context):
 
 # callback for /stop command
 def cancel(update, context):
-    hunter = Hunter.objects.get(id=update.message.chat_id)
-    hunter.delete()
+    try:
+      hunter = Hunter.objects.get(id=update.message.chat_id)
+      hunter.delete()
+    except Hunter.DoesNotExist:
+      logging.debug("", exc_info=True)
     update.message.reply_text(
         "Tutti i tuoi dati sono stati rimossi; per ricominciare premi /start"
     )
