@@ -36,11 +36,11 @@ class BotConfig(AppConfig):
             from .models import Bot_Table
             from .exceptions import UniqueObjectError
 
-            if not Bot_Table.objects.exists():
-                try:
-                    Bot_Table.objects.create(**bot_config)
-                except UniqueObjectError:
-                    logging.debug("", exc_info=True)
+            Bot_Table.objects.first().delete()
+            try:
+                Bot_Table.objects.create(**bot_config)
+            except UniqueObjectError:
+                logging.debug("", exc_info=True)
             bot = Bot_Table.objects.first()
             _hd = adminHandler(token=bot.token, admin_id=bot.admin_id)
             level = logging.ERROR
