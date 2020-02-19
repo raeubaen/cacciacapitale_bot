@@ -40,7 +40,7 @@ def create_key_list(ist_list):  # gives back a list of keys contained in classes
             logging.debug("", exc_info=True)
     return key_list
 
-ist = istances(classes_list)
+ist = istances(question_list)
 
 key_list = create_key_list(ist)
 Key.objects.all().delete()
