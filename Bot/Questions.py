@@ -294,5 +294,5 @@ def cancel(update, context):
 
 
 # question_list = [Phone, Grouping]
-question_list = [Phone, Name, Surname, Age, Uni, Time,>
+question_list = [Phone, Name, Surname, Age, Uni, Time, Perc, Grouping]
 question_list.insert(0, Accept)
