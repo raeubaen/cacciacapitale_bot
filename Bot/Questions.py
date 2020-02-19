@@ -13,6 +13,10 @@ from .utils import cap_anag_list
 from .TeamHandling import create_nodes, handle_queue
 
 
+# question_list = [Phone, Grouping]
+question_list = [Phone, Name, Surname, Age, Uni, Time, Perc, Grouping]
+question_list.insert(0, Accept)
+
 class Accept:  # BEFORE ASKING ANY DATA
     def make(self, update, context):
         if already_in(update.message.chat_id):
@@ -264,3 +268,31 @@ class Grouping:  # others questions are in personalQuestions.py
     filter = Filter()
     key_verbose_name = "Status dell'iscrizione"
     key_name = "queue"
+
+
+# what happens when conversation_handler.END is triggered
+def end_conversation(update, context):
+    admin_id = Bot_Table.objects.first().admin_id
+    if DEBUG:
+        context.bot.send_message(
+            chat_id=admin_id,
+            text=f"Nuovo iscritto:\n{info_summary(chat_id=update.message.chat_id)}",
+        )
+    update.message.reply_text(
+        "Tutto perfetto, richiesta di iscrizione effettuata!\nTi terremo aggiornato/a. Grazie e a presto!"
+    )
+    return ConversationHandler.END
+
+
+# callback for /stop command
+def cancel(update, context):
+    try:
+      hunter = Hunter.objects.get(id=update.message.chat_id)
+      hunter.delete()
+    except Hunter.DoesNotExist:
+      logging.debug("", exc_info=True)
+    update.message.reply_text(
+        "Tutti i tuoi dati sono stati rimossi; per ricominciare premi /start"
+    )
+    return ConversationHandler.END
+

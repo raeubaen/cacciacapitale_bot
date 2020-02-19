@@ -5,7 +5,7 @@ from queue import Queue
 from telegram import Bot
 from telegram.ext import CommandHandler, CallbackQueryHandler
 import threading
-from bot_site.settings import DEBUG
+from bot_site.settings import DEBUG, SITE_ADDRESS
 import requests
 from .models import Bot_Table
 from .TeamHandling import cap_queue_callback
@@ -57,6 +57,21 @@ def get_id(update, context):
     )
 
 
+def set_webhook(token):
+    if not DEBUG:  # in production
+        webhook_url = f"https://{SITE_ADDRESS}/bot/"
+    if DEBUG:  # in localhost
+        from pyngrok import ngrok
+        ngrok_url = ngrok.connect(port=8000)
+        webhook_url = ngrok_url.replace("http", "https") + "/bot/"
+
+    req = requests.post(
+        "https://api.telegram.org/bot" + token + "/setWebhook", {"url": webhook_url}
+    )
+    if req.status_code != 200:
+        logging.error("Webhook not set!")
+
+
 def run():
     from .Conversation import conv_handler, cancel
 
@@ -89,18 +104,7 @@ def run():
     thread = threading.Thread(target=dp.start, name="dispatcher")
     thread.start()
 
-    if not DEBUG:  # in production
-        webhook_url = "https://cacciacapitale.herokuapp.com/bot/"
-    if DEBUG:  # in localhost
-        from pyngrok import ngrok
-
-        ngrok_url = ngrok.connect(port=8000)
-        webhook_url = ngrok_url.replace("http", "https") + "/bot/"
-    req = requests.post(
-        "https://api.telegram.org/bot" + token + "/setWebhook", {"url": webhook_url}
-    )
-    if req.status_code != 200:
-        logging.error("Webhook not set!")
+    set_webhook(token)
 
 
 if __name__ == "__main__":
