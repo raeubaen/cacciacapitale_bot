@@ -13,10 +13,6 @@ from .utils import cap_anag_list
 from .TeamHandling import create_nodes, handle_queue
 
 
-# question_list = [Phone, Grouping]
-question_list = [Phone, Name, Surname, Age, Uni, Time, Perc, Grouping]
-question_list.insert(0, Accept)
-
 class Accept:  # BEFORE ASKING ANY DATA
     def make(self, update, context):
         if already_in(update.message.chat_id):
@@ -296,3 +292,7 @@ def cancel(update, context):
     )
     return ConversationHandler.END
 
+
+# question_list = [Phone, Grouping]
+question_list = [Phone, Name, Surname, Age, Uni, Time,>
+question_list.insert(0, Accept)
