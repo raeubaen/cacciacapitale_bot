@@ -12,6 +12,7 @@ import random
 from .utils import cap_anag_list
 from .TeamHandling import create_nodes, handle_queue
 from bot_site.settings import DEBUG
+import logging
 
 class Accept:  # BEFORE ASKING ANY DATA
     def make(self, update, context):
