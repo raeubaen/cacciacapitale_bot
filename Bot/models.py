@@ -56,7 +56,7 @@ class Hunter(Person):
 
 
 class Queue(models.Model):
-    situation = models.CharField(max_length=30, null=True)
+    situation = models.CharField(max_length=50, null=True)
     hunter = models.OneToOneField(
         Hunter, on_delete=models.CASCADE, null=True, blank=True, parent_link=True
     )
