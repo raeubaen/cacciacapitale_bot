@@ -36,7 +36,7 @@ class BotConfig(AppConfig):
             from .models import Bot_Table
             from .exceptions import UniqueObjectError
 
-            Bot_Table.objects.first().delete()
+            Bot_Table.objects.all().delete()
             try:
                 Bot_Table.objects.create(**bot_config)
             except UniqueObjectError:
