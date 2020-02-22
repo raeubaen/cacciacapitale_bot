@@ -32,7 +32,7 @@ def info_summary(chat_id=None, hunter=None, to_exclude=[]):
             value = getattr(hunter, key.name)
             item = f"{key.verbose_name}: {value}"
         except AttributeError:
-            logging.debug("", exc_info=True)
+            logging.error("", exc_info=True)
         else:
             lines.append(item)
     summary = "\n".join(lines)

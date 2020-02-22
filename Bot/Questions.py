@@ -25,13 +25,13 @@ class Accept:  # BEFORE ASKING ANY DATA
         update.message.reply_text("Iscrizioni non attive - per favore non proseguire")
         """
             "Benvenuto nel Bot di Iscrizione a Caccia Capitale.\n"
-            " Qui sarai guidato nella compilazione dei campi richiesti.\n"
-            "Ti preghiamo di inserire informazioni corrette e veritiere:"
-            " l'inserimento di dati palesemente falsi rallenterebbe il processo di iscrizione,"
+            " Sarai guidato nell'inserimento delle informazioni necessarie..\n"
+            "Ti preghiamo di fornire dati corretti e veritieri:"
+            " l'inserimento di dati falsi rallenterebbe il processo di iscrizione,"
             " fino eventualmente a farti escludere dalla Caccia. \nPer essere rimosso dal computo dei"
             " partecipanti o per interrompere la compilazione é sufficiente che tu"
             " scriva /stop. \nFatto ció potrai comunque ricompilare il modulo scrivendo /start.\n"
-            "I dati che inserisci verranno inviati in via definitiva ai capitani alle ore 12.00 del 19/12."
+            "I dati che inserisci verranno inviati in via definitiva ai capitani alle ore 12.00 del 12/03."
             " Per qualsiasi dubbio, recati su https://cacciacapitale.it"
         """
         update.message.reply_text(
@@ -74,7 +74,7 @@ class Phone:
         update.message.reply_text(
             text="Necessitiamo del tuo numero di telefono"
             " per poterti eventualmente contattare prima e durante la caccia."
-            "Per inviarcelo clicca sul bottone in basso",
+            " Clicca sul bottone in basso",
             reply_markup=_markup,
         )
         return self.num
