@@ -24,4 +24,8 @@ class Migration(migrations.Migration):
             name='verbose_name',
             field=models.CharField(max_length=50, null=True),
         ),
+        migrations.AlterField(
+            model_name='queue',
+            name='situation',
+            field=models.CharField(max_length=50, null=True),
     ]
