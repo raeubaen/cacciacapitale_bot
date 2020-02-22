@@ -247,6 +247,7 @@ class Grouping:  # others questions are in personalQuestions.py
             return self.make_new(update, context)
         cap_anag = choice
         queue = Queue.objects.create(situation="In attesa", hunter=hunter)
+        hunter.save()
         create_nodes(cap_anag, queue)
         handle_queue(hunter, context)
         return self.make_new(update, context)
