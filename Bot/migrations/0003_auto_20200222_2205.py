@@ -14,4 +14,5 @@ class Migration(migrations.Migration):
             model_name='queue',
             name='situation',
             field=models.CharField(max_length=50, null=True),
+        )
     ]
