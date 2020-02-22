@@ -243,8 +243,9 @@ class Grouping:  # others questions are in personalQuestions.py
                 "Contatta il comitato, ti saranno date istruzioni in merito. "
                 "Se invece vuoi inserirti in una squadra già presente, clicca /stop, poi /start e ricomincia."
             )
-            hunter.queue = Queue.objects.create(situation="Richiesta creazione propria squadra", hunter=hunter)
+            Queue.objects.create(situation="Richiesta creazione propria squadra", hunter=hunter)
             hunter.save()
+            logging.error(f"{hunter.queue}")
             return self.make_new(update, context)
         cap_anag = choice
         queue = Queue.objects.create(situation="In attesa", hunter=hunter)
