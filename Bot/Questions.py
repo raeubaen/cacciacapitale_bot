@@ -245,7 +245,6 @@ class Grouping:  # others questions are in personalQuestions.py
             )
             Queue.objects.create(situation="Richiesta creazione propria squadra", hunter=hunter)
             hunter.save()
-            logging.error(f"{hunter.queue}")
             return self.make_new(update, context)
         cap_anag = choice
         queue = Queue.objects.create(situation="In attesa", hunter=hunter)
