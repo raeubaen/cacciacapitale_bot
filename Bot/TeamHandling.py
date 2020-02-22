@@ -66,7 +66,10 @@ def cap_queue_callback(update, context):
     )
 
     cap = Captain.objects.get(id=cap_id)
-    hunter = Hunter.objects.get(id=hunter_id)
+    try: hunter = Hunter.objects.get(id=hunter_id)
+    except Hunter.DoesNotExist:
+      logging.debug("", exc_info=True)
+      return
     node = hunter.queue.node_set.get(captain=cap)
 
     if answer == "Si":
