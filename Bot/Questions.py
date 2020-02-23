@@ -33,12 +33,12 @@ class Accept:  # BEFORE ASKING ANY DATA
             " partecipanti o per interrompere la compilazione é sufficiente che tu"
             " scriva /stop. \nFatto ció potrai comunque ricompilare il modulo scrivendo /start.\n"
             "I dati che inserisci verranno inviati in via definitiva ai capitani alle ore 12.00 del 12/03."
-            " Per qualsiasi dubbio, recati su https://cacciacapitale.it"
+            " Per qualsiasi dubbio, recati su www.cacciacapitale.it"
         """
         update.message.reply_text(
             ""
             " Per prima cosa, ti preghiamo di accettare il trattamento dei dati personali [Si/No].\n"
-            " Trovi la nostra privacy policy all'indirizzo https://cacciacapitale.sytes.net/privacypolicy.txt",
+            " Trovi la nostra privacy policy all'indirizzo www.cacciacapitale.it/privacypolicy.txt",
             reply_markup=_markup,
         )
         return self.num
