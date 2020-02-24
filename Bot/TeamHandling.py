@@ -10,7 +10,7 @@ def create_nodes(cap_anag, queue):
             queue=queue, captain=cap_list[i], number=i, status="Non chiesto"
         )
     asked_captain = Captain.objects.get(anagraphic=cap_anag)
-    asked_node = Node.objects.get(captain=asked_captain)
+    asked_node = Node.objects.get(captain=asked_captain, queue=queue)
     asked_node.status = "Chiesto"
     asked_node.save()
 
