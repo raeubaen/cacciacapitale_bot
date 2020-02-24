@@ -44,8 +44,8 @@ class Hunter(Person):
     phone = models.CharField(max_length=15, null=True)
     surname = models.CharField(max_length=50, null=True)
     age = models.IntegerField(null=True)
-    uni = models.CharField(max_length=50, null=True)
-    tframe = models.CharField(max_length=50, null=True)
+    uni = models.CharField(max_length=500, null=True)
+    tframe = models.CharField(max_length=500, null=True)
     perc = models.IntegerField(null=True)
     captain = models.ForeignKey(
         Captain, on_delete=models.CASCADE, null=True, blank=True
