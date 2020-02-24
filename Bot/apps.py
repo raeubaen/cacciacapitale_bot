@@ -13,7 +13,10 @@ class adminHandler(logging.Handler):
         logging.Handler.__init__(self)
 
     def emit(self, record):
-        self.bot.send_message(chat_id=self.admin_id, text=self.format(record))
+        with open("log.txt", "w") as out_file:
+            out_file.write(self.format(record))
+        with open("log.txt", "rb") as in_file:
+            self.bot.send_document(self.admin_id, in_file)
 
 
 class BotConfig(AppConfig):

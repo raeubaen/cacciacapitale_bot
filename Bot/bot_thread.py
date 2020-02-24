@@ -74,7 +74,10 @@ def set_webhook(token):
 
 def run():
     from .Conversation import conv_handler, cancel
-
+    try:
+        print(r)
+    except:
+        logging.error("e c maronn", exc_info=True)
     # importing data from database
     bot_db_table = Bot_Table.objects.first()
     token = bot_db_table.token
@@ -85,15 +88,14 @@ def run():
     BotUpdateQueue().queue = update_queue
     dp = Dispatcher(bot, update_queue, use_context=True)
 
-    if not Captain.objects.all():  # if db does not contain captains
-        with open(
-            "captains.txt", "r", encoding="utf-8"
-        ) as in_file:  # cap1_name - cap1_id, ...
-            entries = in_file.read().replace("\n", "").split(",")
-        for entry in entries:
-            anagraphic, id_str = entry.split(" - ")
-            id = int(id_str)
-            Captain.objects.create(id=id, anagraphic=anagraphic)
+    with open(
+        "captains.txt", "r", encoding="utf-8"
+    ) as in_file:  # cap1_name - cap1_id, ...
+        entries = in_file.read().replace("\n", "").split(",")
+    for entry in entries:
+        anagraphic, id_str = entry.split(" - ")
+        id = int(id_str)
+        Captain.objects.get_or_create(id=id, anagraphic=anagraphic)
 
     dp.add_handler(CommandHandler("id", get_id))
     dp.add_handler(CallbackQueryHandler(cap_queue_callback))
