@@ -74,10 +74,7 @@ def set_webhook(token):
 
 def run():
     from .Conversation import conv_handler, cancel
-    try:
-        print(r)
-    except:
-        logging.error("e c maronn", exc_info=True)
+
     # importing data from database
     bot_db_table = Bot_Table.objects.first()
     token = bot_db_table.token
