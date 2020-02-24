@@ -23,9 +23,9 @@ class Accept:  # BEFORE ASKING ANY DATA
             )
             return ConversationHandler.END
         _markup = ReplyKeyboardMarkup([["Si"], ["No"]], one_time_keyboard=True)
-        update.message.reply_text("Iscrizioni non attive - per favore non proseguire")
-        """
+        update.message.reply_text(""
             "Benvenuto nel Bot di Iscrizione a Caccia Capitale.\n"
+            "La caccia si svolgerá inizierà il 14/03 sera\n"
             " Sarai guidato nell'inserimento delle informazioni necessarie..\n"
             "Ti preghiamo di fornire dati corretti e veritieri:"
             " l'inserimento di dati falsi rallenterebbe il processo di iscrizione,"
@@ -34,7 +34,7 @@ class Accept:  # BEFORE ASKING ANY DATA
             " scriva /stop. \nFatto ció potrai comunque ricompilare il modulo scrivendo /start.\n"
             "I dati che inserisci verranno inviati in via definitiva ai capitani alle ore 12.00 del 12/03."
             " Per qualsiasi dubbio, recati su www.cacciacapitale.it"
-        """
+        )
         update.message.reply_text(
             ""
             " Per prima cosa, ti preghiamo di accettare il trattamento dei dati personali [Si/No].\n"
