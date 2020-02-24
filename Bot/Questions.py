@@ -25,8 +25,8 @@ class Accept:  # BEFORE ASKING ANY DATA
         _markup = ReplyKeyboardMarkup([["Si"], ["No"]], one_time_keyboard=True)
         update.message.reply_text(""
             "Benvenuto nel Bot di Iscrizione a Caccia Capitale.\n"
-            "La caccia si svolgerá inizierà il 14/03 sera\n"
-            " Sarai guidato nell'inserimento delle informazioni necessarie..\n"
+            "La caccia si svolgerá inizierà il 14/03 sera.\n"
+            "Sarai guidato nell'inserimento delle informazioni necessarie..\n"
             "Ti preghiamo di fornire dati corretti e veritieri:"
             " l'inserimento di dati falsi rallenterebbe il processo di iscrizione,"
             " fino eventualmente a farti escludere dalla Caccia. \nPer essere rimosso dal computo dei"
