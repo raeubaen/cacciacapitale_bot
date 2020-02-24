@@ -1,0 +1,5 @@
+e c maronn
+Traceback (most recent call last):
+  File "/home/ruben/Documenti/formbot2020/Bot/bot_thread.py", line 78, in run
+    print(r)
+NameError: name 'r' is not defined
