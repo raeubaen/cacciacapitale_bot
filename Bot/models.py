@@ -76,7 +76,7 @@ class Queue(models.Model):
 class Node(models.Model):
     uid = models.AutoField(primary_key=True)
     queue = models.ForeignKey(Queue, on_delete=models.CASCADE, null=True, blank=True)
-    captain = models.OneToOneField(
+    captain = models.ForeignKey(
         Captain, on_delete=models.CASCADE, null=True, blank=True
     )
     status = models.CharField(max_length=20, null=True)
