@@ -1,6 +1,7 @@
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from .utils import info_summary, anag
 from .models import Captain, Hunter, Node
+import logging
 
 # Initializes the status of a member, given the captain chosen on the chat
 def create_nodes(cap_anag, queue):
