@@ -56,7 +56,7 @@ def update_team_txt():
         teams_summary = []
         for cap in cap_list:
             hunter_list = cap.hunter_set.all()
-            hunter_anag_list = [f"    {anag(hunter)}" for hunter in hunter_list]
+            hunter_anag_list = [f"    {anag(hunter)}\n" for hunter in hunter_list]
             teams_summary.append(
                 f"  {cap.anagraphic}:\n" + "    ".join(hunter_anag_list)
             )
