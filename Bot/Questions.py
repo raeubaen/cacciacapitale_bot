@@ -12,6 +12,8 @@ import random
 from .utils import cap_anag_list
 from .TeamHandling import create_nodes, handle_queue
 from bot_site.settings import DEBUG
+from django.db.models import Count
+
 import logging
 
 class Accept:  # BEFORE ASKING ANY DATA
@@ -228,7 +230,8 @@ class Perc:
 class Grouping:  # others questions are in personalQuestions.py
     def make(self, update, context):
         MAX_MEMBERS_PER_TEAM = Bot_Table.objects.first().max_team_size
-        BUTTONS = [[i] for i in cap_anag_list(MAX_MEMBERS_PER_TEAM)]
+        cap_q_set = Captain.objects.annotate(num_h=Count('hunter')).filter(num_h__lte=MAX_MEMBERS_PER_TEAM).values_list("anagraphic")
+        BUTTONS = [[i] for i in cap_q_set]
         random.shuffle(BUTTONS)
         BUTTONS.insert(0, ["Crea la tua squadra"])
         _markup = ReplyKeyboardMarkup(BUTTONS, one_time_keyboard=True)
