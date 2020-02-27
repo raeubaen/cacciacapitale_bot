@@ -231,7 +231,7 @@ class Grouping:  # others questions are in personalQuestions.py
     def make(self, update, context):
         MAX_MEMBERS_PER_TEAM = Bot_Table.objects.first().max_team_size
         cap_q_set = Captain.objects.annotate(num_h=Count('hunter')).filter(num_h__lte=MAX_MEMBERS_PER_TEAM).values_list("anagraphic")
-        BUTTONS = [[i] for i in cap_q_set]
+        BUTTONS = [[tpl[0]] for tpl in cap_q_set]
         random.shuffle(BUTTONS)
         BUTTONS.insert(0, ["Crea la tua squadra"])
         _markup = ReplyKeyboardMarkup(BUTTONS, one_time_keyboard=True)
