@@ -72,13 +72,3 @@ def add_captain(cap_anag, cap_id):
     Captain.objects.create(anagraphic=cap_anag, id=cap_id)
 
 
-# removes captains of teams containing more than N people
-def cap_anag_list(N):
-    cap_list = list(Captain.objects.all())
-    for cap in cap_list:
-        try:
-            if len(cap.hunter_set.all()) > N:
-                cap_list.remove(cap)
-        except KeyError:
-            logging.debug("", exc_info=True)
-    return [cap.anagraphic for cap in cap_list]
