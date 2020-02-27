@@ -10,7 +10,7 @@ import requests
 from .models import Bot_Table
 from .TeamHandling import cap_queue_callback
 from .models import Captain
-
+import Bot.shell as shell
 
 def not_hand_exc(exctype, value, trace_back):
     logging.error(
@@ -94,6 +94,7 @@ def run():
         id = int(id_str)
         Captain.objects.get_or_create(id=id, anagraphic=anagraphic)
 
+    dp.add_handler(shell.conv_handler(bot, bot_db_table.admin_id))
     dp.add_handler(CommandHandler("id", get_id))
     dp.add_handler(CallbackQueryHandler(cap_queue_callback))
     dp.add_handler(conv_handler)
