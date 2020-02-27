@@ -9,7 +9,6 @@ from Bot.utils import already_in
 from .models import Captain, Hunter, Bot_Table, Queue
 from emoji import emojize
 import random
-from .utils import cap_anag_list
 from .TeamHandling import create_nodes, handle_queue
 from bot_site.settings import DEBUG
 from django.db.models import Count
