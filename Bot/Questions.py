@@ -260,7 +260,8 @@ class Grouping:  # others questions are in personalQuestions.py
             try:
                 txt = message.text
                 MAX_MEMBERS_PER_TEAM = Bot_Table.objects.first().max_team_size
-                flat_buttons = cap_anag_list(MAX_MEMBERS_PER_TEAM)
+                cap_q_set = Captain.objects.annotate(num_h=Count('hunter')).filter(num_h__lte=MAX_MEMBERS_PER_TEAM).values_list("anagraphic")
+                flat_buttons = list(cap_q_set)
                 flat_buttons.insert(0, "Crea la tua squadra")
                 return txt in flat_buttons
             except AttributeError:
