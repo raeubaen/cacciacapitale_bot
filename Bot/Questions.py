@@ -12,7 +12,7 @@ import random
 from .TeamHandling import create_nodes, handle_queue
 from bot_site.settings import DEBUG
 from django.db.models import Count
-
+from .utils import info_summary
 import logging
 
 class Accept:  # BEFORE ASKING ANY DATA
