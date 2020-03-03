@@ -43,7 +43,7 @@ if DEBUG is False:
     X_FRAME_OPTIONS = "DENY"
     SECURE_HSTS_SECONDS = 60
     SECURE_SSL_REDIRECT = True
-    ALLOWED_HOSTS = [SITE_ADDRESS, "bot.cacciacapitale.it"]
+    ALLOWED_HOSTS = [SITE_ADDRESS]
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
 # Application definition
