@@ -14,7 +14,7 @@ import os
 import django_heroku
 import logging
 
-SITE_ADDRESS = "cacciacapitale.herokuapp.com"
+SITE_ADDRESS = ["cacciacapitale.herokuapp.com", "bot.cacciacapitale.it"]
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -43,7 +43,7 @@ if DEBUG is False:
     X_FRAME_OPTIONS = "DENY"
     SECURE_HSTS_SECONDS = 60
     SECURE_SSL_REDIRECT = True
-    ALLOWED_HOSTS = [SITE_ADDRESS]
+    ALLOWED_HOSTS = SITE_ADDRESS
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
 # Application definition
