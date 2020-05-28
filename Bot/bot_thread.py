@@ -87,10 +87,7 @@ def run():
     BotUpdateQueue().queue = update_queue
     dp = Dispatcher(bot, update_queue, use_context=True)
 
-<<<<<<< HEAD
     '''
-=======
->>>>>>> 4b8c395671f5d319788d2779ce32715404593173
     with open(
         "captains.txt", "r", encoding="utf-8"
     ) as in_file:  # cap1_name - cap1_id, ...
@@ -111,11 +108,9 @@ def run():
             update.message.reply_text("Per iniziare l'iscrizione dimmi /start")
         )
     )
-<<<<<<< HEAD
     '''
     dp.add_handler(MessageHandler(Filters.test("3.14"), callback))
-=======
->>>>>>> 4b8c395671f5d319788d2779ce32715404593173
+
     dp.add_error_handler(error)
 
     thread = threading.Thread(target=dp.start, name="dispatcher")
