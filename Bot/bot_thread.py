@@ -79,7 +79,7 @@ def callback(update, context):
           "in realtà potrei anche farti vincere ora ma come ben sai io sono Pescenzo e sono un cacacazzo... "
           "quindi per ottenere il primo posto e vincere il gran finale della caccia a domicilio "
           "devi registrare un video dove spieghi tutti i passaggi di quest'ultimo indizio e inviarmelo in privato su Instagram, "
-          "insieme ad una poesia dedicata a me PESCENZO di almeno 4 righe con schema ABAB."
+          "insieme ad una poesia dedicata a me PESCENZO di almeno 6 righe con lo schema del titolo di questo indizio."
           "Fai presto!!!”")
       else:
         update.message.reply_text("Finalmente! "
