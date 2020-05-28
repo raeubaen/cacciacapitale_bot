@@ -73,7 +73,7 @@ def set_webhook(token):
 
 def callback(update, context):
     try:
-      if update.message.text.lower() == "oman":
+      if update.message.text.lower() == "psssam":
         update.message.reply_text("Perfetto! Finalmente so che posso fidarmi di te... "
           "allora posso anche dirti che sei ad un passo dalla vittoria... "
           "in realtà potrei anche farti vincere ora ma come ben sai io sono Pescenzo e sono un cacacazzo... "
