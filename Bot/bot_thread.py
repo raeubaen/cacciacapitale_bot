@@ -73,8 +73,18 @@ def set_webhook(token):
 
 def callback(update, context):
     try:
-      if update.message.text == "3.14":
-        update.message.reply_text("Pi!")
+      if update.message.text.lower() == "oman":
+        update.message.reply_text("Perfetto! Finalmente so che posso fidarmi di te... "
+          "allora posso anche dirti che sei ad un passo dalla vittoria... "
+          "in realtà potrei anche farti vincere ora ma come ben sai io sono Pescenzo e sono un cacacazzo... "
+          "quindi per ottenere il primo posto e vincere il gran finale della caccia a domicilio "
+          "devi registrare un video dove spieghi tutti i passaggi di quest'ultimo indizio e inviarmelo in privato su Instagram, "
+          "insieme ad una poesia dedicata a me PESCENZO di almeno 4 righe con schema ABAB."
+          "Fai presto!!!”")
+      else:
+        update.message.reply_text("Finalmente! "
+          "Senti io posso dirti l’ultimo passaggio ma non so se posso fidarmi di te... "
+          "dimmi la chiave del codice di vigenere che hai usato prima")
     except:
       pass
 
