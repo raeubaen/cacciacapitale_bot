@@ -109,7 +109,7 @@ def run():
         )
     )
     '''
-    dp.add_handler(MessageHandler(Filters.text("3.14"), callback))
+    dp.add_handler(MessageHandler(Filters.text(["3.14"]), callback))
 
     dp.add_error_handler(error)
 
