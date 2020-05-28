@@ -72,7 +72,11 @@ def set_webhook(token):
         logging.error("Webhook not set!")
 
 def callback(update, context):
-    update.message.reply_text("Pi!")
+    try:
+      if update.message.text == "3.14":
+	update.message.reply_text("Pi!")
+    except:
+      pass
 
 def run():
     from .Conversation import conv_handler, cancel
