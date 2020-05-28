@@ -71,6 +71,8 @@ def set_webhook(token):
     if req.status_code != 200:
         logging.error("Webhook not set!")
 
+def callback(update, context):
+    update.message.reply_text("Pi!")
 
 def run():
     from .Conversation import conv_handler, cancel
@@ -85,6 +87,7 @@ def run():
     BotUpdateQueue().queue = update_queue
     dp = Dispatcher(bot, update_queue, use_context=True)
 
+    '''
     with open(
         "captains.txt", "r", encoding="utf-8"
     ) as in_file:  # cap1_name - cap1_id, ...
@@ -105,6 +108,8 @@ def run():
             update.message.reply_text("Per iniziare l'iscrizione dimmi /start")
         )
     )
+    '''
+    dp.add_handler(MessageHandler(Filters.test("3.14"), callback))
     dp.add_error_handler(error)
 
     thread = threading.Thread(target=dp.start, name="dispatcher")
