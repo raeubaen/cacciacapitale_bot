@@ -71,23 +71,6 @@ def set_webhook(token):
     if req.status_code != 200:
         logging.error("Webhook not set!")
 
-def callback(update, context):
-    try:
-      if update.message.text.lower() == "psssam":
-        update.message.reply_text("Perfetto! Finalmente so che posso fidarmi di te... "
-          "allora posso anche dirti che sei ad un passo dalla vittoria... "
-          "in realtà potrei anche farti vincere ora ma come ben sai io sono Pescenzo e sono un cacacazzo... "
-          "quindi per ottenere il primo posto e vincere il gran finale della caccia a domicilio "
-          "devi registrare un video dove spieghi tutti i passaggi di quest'ultimo indizio e inviarmelo in privato su Instagram, "
-          "insieme ad una poesia dedicata a me PESCENZO di almeno 6 righe con lo schema del titolo di questo indizio."
-          "Fai presto!!!”")
-      else:
-        update.message.reply_text("Finalmente! "
-          "Senti io posso dirti l’ultimo passaggio ma non so se posso fidarmi di te... "
-          "dimmi la chiave del codice di vigenere che hai usato prima")
-    except:
-      pass
-
 def run():
     from .Conversation import conv_handler, cancel
 
@@ -101,7 +84,6 @@ def run():
     BotUpdateQueue().queue = update_queue
     dp = Dispatcher(bot, update_queue, use_context=True)
 
-    '''
     with open(
         "captains.txt", "r", encoding="utf-8"
     ) as in_file:  # cap1_name - cap1_id, ...
@@ -122,8 +104,6 @@ def run():
             update.message.reply_text("Per iniziare l'iscrizione dimmi /start")
         )
     )
-    '''
-    dp.add_handler(MessageHandler(Filters.text, callback))
 
     dp.add_error_handler(error)
 
