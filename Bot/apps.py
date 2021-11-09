@@ -46,7 +46,6 @@ class BotConfig(AppConfig):
                 Bot_Table_instance = Bot_Table.objects.create(**bot_config)
                 for id in admin_ids:
                     AdminId.objects.create(id=id, bot=Bot_Table_instance)
-                for
             except UniqueObjectError:
                 logging.debug("", exc_info=True)
             bot = Bot_Table.objects.first()
