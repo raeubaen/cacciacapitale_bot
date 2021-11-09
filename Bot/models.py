@@ -18,12 +18,12 @@ class Bot_Table(models.Model):
 
 
 class AdminId(models.Model):
-    id = models.IntegerField(null=True)
+    admin_id = models.IntegerField(null=True)
     bot = models.ForeignKey(
         Bot_Table, on_delete=models.CASCADE, null=True, blank=True
     )
     
-    
+
 class Key(models.Model):
     name = models.CharField(max_length=50, null=True)
     verbose_name = models.CharField(max_length=50, null=True)
