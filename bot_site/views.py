@@ -92,3 +92,6 @@ def send_add_captain(request):
 
 def home(request):
     return render(request, "home.html")
+
+def teamdisplay(request):
+    return render(request, "teamdisplay.html")
