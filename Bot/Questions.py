@@ -15,6 +15,8 @@ from django.db.models import Count
 from .utils import info_summary
 import logging
 
+Iscr_aperte = False
+
 class Accept:  # BEFORE ASKING ANY DATA
     def make(self, update, context):
         if already_in(update.message.chat_id):
@@ -26,7 +28,7 @@ class Accept:  # BEFORE ASKING ANY DATA
         _markup = ReplyKeyboardMarkup([["Si"], ["No"]], one_time_keyboard=True)
         update.message.reply_text(""
             "Benvenuto nel Bot di Iscrizione a Caccia Capitale.\n"
-            "La caccia inizierà il 14/03 sera.\n"
+            "La caccia sara' prossimamente in una sera da definire.\n"
             "Sarai guidato nell'inserimento delle informazioni necessarie.\n"
             "Ti preghiamo di fornire dati corretti e veritieri:"
             " l'inserimento di dati falsi rallenterebbe il processo di iscrizione,"
@@ -66,20 +68,24 @@ class Accept:  # BEFORE ASKING ANY DATA
     key_name = "id"
 
 class Phone:
-    def make(self, update, context):
-        em1 = emojize(":telephone:", use_aliases=True)
-        em2 = emojize(":mobile_phone:", use_aliases=True)
-        _contact_button = KeyboardButton(
-            text=em1 + " Invia il tuo numero di telefono " + em2, request_contact=True
-        )
-        _markup = ReplyKeyboardMarkup([[_contact_button]], one_time_keyboard=True)
-        update.message.reply_text(
-            text="Necessitiamo del tuo numero di telefono"
-            " per poterti eventualmente contattare prima e durante la caccia."
-            " Clicca sul bottone in basso",
-            reply_markup=_markup,
-        )
-        return self.num
+    def make(self, update, context, Iscr_aperte):
+        if Iscr_aperte is True:
+            em1 = emojize(":telephone:", use_aliases=True)
+            em2 = emojize(":mobile_phone:", use_aliases=True)
+            _contact_button = KeyboardButton(
+                text=em1 + " Invia il tuo numero di telefono " + em2, request_contact=True
+            )
+            _markup = ReplyKeyboardMarkup([[_contact_button]], one_time_keyboard=True)
+            update.message.reply_text(
+                text="Necessitiamo del tuo numero di telefono"
+                " per poterti eventualmente contattare prima e durante la caccia."
+                " Clicca sul bottone in basso",
+                reply_markup=_markup,
+            )
+            return self.num
+        else: 
+            update.message.reply_text(text="Le iscrizioni sono temporaneamente chiuse, ritorna in un altro momento")
+            return ConversationHandler.END   
 
     def process(self, update, context):
         chat_id = update.message.chat_id
