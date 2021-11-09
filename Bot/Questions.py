@@ -35,7 +35,6 @@ class Accept:  # BEFORE ASKING ANY DATA
             " fino eventualmente a farti escludere dalla caccia. \nPer essere rimosso dal computo dei"
             " partecipanti o per interrompere la compilazione é sufficiente che tu"
             " scriva /stop. \nFatto ció potrai comunque ricompilare il modulo scrivendo /start.\n"
-            "I dati che inserisci verranno inviati in via definitiva ai capitani alle ore 12.00 del 12/03."
             " Per qualsiasi dubbio, recati su www.cacciacapitale.it"
         )
         update.message.reply_text(
@@ -306,6 +305,6 @@ def cancel(update, context):
     return ConversationHandler.END
 
 
-# question_list = [Phone, Grouping]
-question_list = [Phone, Name, Surname, Age, Uni, Time, Perc, Grouping]
+# question_list = [Phone(Iscr_aperte), Grouping]
+question_list = [Phone(Iscr_aperte), Name, Surname, Age, Uni, Time, Perc, Grouping]
 question_list.insert(0, Accept)
