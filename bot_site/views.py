@@ -102,6 +102,6 @@ def teamprint(request):
     text = source.read()
     body = "<html> <head> %a <hmtl> <head>"%(text)
     source.close()
-    file = open("/templates/teamprint.html",w)
+    file = open("templates/teamprint.html",w)
     file.write(body)
     return render(request, "teamprint.html")
