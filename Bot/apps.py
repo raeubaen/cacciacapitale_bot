@@ -38,7 +38,7 @@ class BotConfig(AppConfig):
             )
         ):
             import Bot.bot_thread as bot_thread
-            from .models import Bot_Table
+            from .models import Bot_Table, AdminId
             from .exceptions import UniqueObjectError
 
             Bot_Table.objects.all().delete()
