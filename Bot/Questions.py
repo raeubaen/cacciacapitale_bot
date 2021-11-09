@@ -15,7 +15,7 @@ from django.db.models import Count
 from .utils import info_summary
 import logging
 
-Iscr_aperte = False
+
 
 class Accept:  # BEFORE ASKING ANY DATA
     def make(self, update, context):
@@ -67,7 +67,8 @@ class Accept:  # BEFORE ASKING ANY DATA
     key_name = "id"
 
 class Phone:
-    def make(self, update, context, Iscr_aperte):
+    def make(self, update, context):
+        Iscr_aperte = False
         if Iscr_aperte is True:
             em1 = emojize(":telephone:", use_aliases=True)
             em2 = emojize(":mobile_phone:", use_aliases=True)
@@ -305,6 +306,6 @@ def cancel(update, context):
     return ConversationHandler.END
 
 
-# question_list = [Phone(Iscr_aperte), Grouping]
-question_list = [Phone(Iscr_aperte), Name, Surname, Age, Uni, Time, Perc, Grouping]
+# question_list = [Phone, Grouping]
+question_list = [Phone, Name, Surname, Age, Uni, Time, Perc, Grouping]
 question_list.insert(0, Accept)
