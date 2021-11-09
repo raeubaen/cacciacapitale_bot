@@ -1,12 +1,17 @@
 from django.db import models
 
 
+class AdminId(models.Model):
+    id = models.IntegerField(null=True)
+    bot = models.ForeignKey(
+        Bot_Table, on_delete=models.CASCADE, null=True, blank=True
+    )
+    
 class Bot_Table(models.Model):
     id = models.IntegerField(
         unique=True, primary_key=True, default=1
     )  # to be sure there's only one instance of the model
     token = models.CharField(max_length=70, null=True)
-    admin_id = models.IntegerField(null=True)
     max_team_size = models.IntegerField(null=True)
 
     def save(self, *args, **kwargs):
