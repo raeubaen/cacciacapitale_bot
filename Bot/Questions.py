@@ -68,7 +68,7 @@ class Accept:  # BEFORE ASKING ANY DATA
 
 class Phone:
     def make(self, update, context):
-        Iscr_aperte = True
+        Iscr_aperte = False
         if Iscr_aperte is True:
             em1 = emojize(":telephone:", use_aliases=True)
             em2 = emojize(":mobile_phone:", use_aliases=True)
