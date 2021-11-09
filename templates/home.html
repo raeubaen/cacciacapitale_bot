@@ -5,7 +5,7 @@
 <style>
   body {
     background-color: white ;
-    background-image: url({% static "moby01.jpg" %});
+    background-image: url({% static "maxresdefault.jpg" %});
     background-repeat: no-repeat;
     background-size: auto 100vh;
     background-position: center;
@@ -14,15 +14,15 @@
 </style>
 <div class="row">
   <div class="column" style="text-align:center">
-    <h1>OPERAZIONE MOBY DICK</h1>
+    <h1>PANNELLO ADMIN BOT CACCIACAPITALE</h1>
     <h2>Amministrazione del bot per le iscrizioni</h1><br><br><br>
     <form action="{% url 'logout' %}" method="GET"><input type="submit" class="buttons" value="Logout"></form><br><br>
     <div style="width: 80%; display: inline-block">
       <div style="float: left; width: 40%">
-        <form action="download_players"><input type="submit" class="buttons" value="Scarica i membri"></form>
+        <form action="download_players"><input type="submit" class="buttons" value="Scarica lista membri"></form>
       </div>
       <div style="float: right; width: 40%">
-        <form action="download_teams"><input type="submit" class="buttons" value="Scarica le squadre"></form>
+        <form action="download_teams"><input type="submit" class="buttons" value="Scarica lista squadre"></form>
       </div>
     </div>
     <br><br><br>
