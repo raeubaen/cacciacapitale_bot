@@ -95,3 +95,11 @@ def home(request):
 
 def teamdisplay(request):
     return render(request, "teamdisplay.html")
+
+def teamprint(request)
+    open("/templates/teamprint.html", "w").close()
+    source = open("data/teams.txt",r)
+    text = source.read()
+    source.close()
+    file = open("/templates/teamprint.html",w)
+    file.write(text)
