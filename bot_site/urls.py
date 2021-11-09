@@ -9,7 +9,7 @@ urlpatterns = [
     path("accounts/", include("django.contrib.auth.urls")),
     path("", views.home, name="home"),
     path("teamdisplay/", views.teamdisplay, name="teamdisplay"),
-    path("teamprint/", views.teamprint, name="teamprint")
+    path("teamprint/", views.teamprint, name="teamprint"),
     # actions in home (mainWindow)
     path("download_players/", views.download_players, name="download_players"),
     path("download_teams/", views.download_teams, name="download_teams"),
