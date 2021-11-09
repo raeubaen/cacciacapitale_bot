@@ -1,12 +1,7 @@
 from django.db import models
 
 
-class AdminId(models.Model):
-    id = models.IntegerField(null=True)
-    bot = models.ForeignKey(
-        Bot_Table, on_delete=models.CASCADE, null=True, blank=True
-    )
-    
+
 class Bot_Table(models.Model):
     id = models.IntegerField(
         unique=True, primary_key=True, default=1
@@ -22,6 +17,13 @@ class Bot_Table(models.Model):
         super().save(*args, **kwargs)
 
 
+class AdminId(models.Model):
+    id = models.IntegerField(null=True)
+    bot = models.ForeignKey(
+        Bot_Table, on_delete=models.CASCADE, null=True, blank=True
+    )
+    
+    
 class Key(models.Model):
     name = models.CharField(max_length=50, null=True)
     verbose_name = models.CharField(max_length=50, null=True)
