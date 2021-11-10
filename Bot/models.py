@@ -18,7 +18,7 @@ class Bot_Table(models.Model):
 
     @property
     def admin_ids(self):
-        return list(self.adminid_set.all())
+        return list(self.adminid_set.values_list('admin_id', flat=True))
 
 class AdminId(models.Model):
     admin_id = models.IntegerField(null=True)
