@@ -94,14 +94,9 @@ def home(request):
     return render(request, "home.html")
 
 def teamdisplay(request):
-    return render(request, "teamdisplay.html")
+    utils.update_team_txt()
 
-def teamprint(request):
-    open("/templates/teamprint.html", "w").close()
-    source = open("data/teams.txt",r)
-    text = source.read()
-    body = "<html> <head> %a <hmtl> <head>"%(text)
-    source.close()
-    file = open("templates/teamprint.html",w)
-    file.write(body)
-    return render(request, "teamprint.html")
+    return render_to_response(request, "teamdisplay.html",
+      {
+       "text": open("data/teams.txt",r).read()
+      }, RequestContext(request))
