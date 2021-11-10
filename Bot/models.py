@@ -16,6 +16,9 @@ class Bot_Table(models.Model):
             )
         super().save(*args, **kwargs)
 
+    @getter
+    def admin_ids:
+        return list(self.adminid_set.all())
 
 class AdminId(models.Model):
     admin_id = models.IntegerField(null=True)

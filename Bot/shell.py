@@ -63,10 +63,10 @@ class Shell:
         return setattr(self.instance, name, value)
 
 
-def conv_handler(bot, admin_id):
+def conv_handler(bot, admin_ids):
 
     def run(update, context):
-        Shell().run(bot, admin_id)
+        Shell().run(bot, update.message.chat_id)
         return 1
     
     def write(update, context):
@@ -78,8 +78,8 @@ def conv_handler(bot, admin_id):
         return ConversationHandler.END
 
     ch = ConversationHandler(
-        [CommandHandler("shell", run, filters=Filters.chat(admin_id))],
+        [CommandHandler("shell", run, filters=Filters.chat(admin_ids))],
         {1: [MessageHandler(Filters.text, write)]},
-        [CommandHandler("close", close, filters=Filters.chat(admin_id))],
+        [CommandHandler("close", close, filters=Filters.chat(admin_ids))],
     )
     return ch
