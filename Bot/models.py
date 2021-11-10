@@ -16,7 +16,7 @@ class Bot_Table(models.Model):
             )
         super().save(*args, **kwargs)
 
-    @getter
+    @property
     def admin_ids(self):
         return list(self.adminid_set.all())
 
