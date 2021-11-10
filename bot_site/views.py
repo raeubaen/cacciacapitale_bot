@@ -96,7 +96,7 @@ def home(request):
 def teamdisplay(request):
     utils.update_team_txt()
 
-    return render_to_response(request, "teamdisplay.html",
+    return render(request, "teamdisplay.html",
       {
        "text": open("data/teams.txt",r).read()
-      }, RequestContext(request))
+      })
