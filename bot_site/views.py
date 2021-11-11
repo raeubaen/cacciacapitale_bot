@@ -98,5 +98,5 @@ def teamdisplay(request):
 
     return render(request, "teamdisplay.html",
       {
-       "text": open("data/teams.txt",r).read()
+       "text": open("data/teams.txt").read()
       })
