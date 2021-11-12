@@ -10,6 +10,7 @@ from bot_site.settings import DEBUG
 class adminHandler(logging.Handler):
     def __init__(self, token=None, admin_ids=None):
         self.bot = telegramBot(token)
+        print(admin_ids)
         self.admin_ids = admin_ids
         logging.Handler.__init__(self)
 
@@ -53,7 +54,7 @@ class BotConfig(AppConfig):
             except UniqueObjectError:
                 logging.debug("", exc_info=True)
             bot = Bot_Table.objects.first()
-            _hd = adminHandler(token=bot.token, admin_ids=list(bot.adminid_set.values_list()))
+            _hd = adminHandler(token=bot.token, admin_ids=list(bot.adminid_set.values_list("admin_id", flat=True)) )
             level = logging.ERROR
             _hd.setLevel(level)
             if not DEBUG:
