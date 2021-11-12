@@ -11,10 +11,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name='bot_table',
-            name='admin_id',
-        ),
         migrations.CreateModel(
             name='AdminId',
             fields=[
