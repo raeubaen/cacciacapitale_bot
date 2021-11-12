@@ -64,7 +64,6 @@ def download_players(request):
 
 
 def download_teams(request):
-    utils.update_team_txt()
     file_path = "data/teams.txt"
     try:
         wrapper = FileWrapper(open(file_path, "rb"))
@@ -96,7 +95,6 @@ def home(request):
     return render(request, "home.html")
 
 def teamdisplay(request):
-    utils.update_team_txt()
     content = open("data/teams.txt","r").read()
     return render(request, "teamdisplay.html",
       {
