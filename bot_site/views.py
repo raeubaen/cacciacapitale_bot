@@ -100,5 +100,5 @@ def teamdisplay(request):
     content = open("data/teams.txt","r").read()
     return render(request, "teamdisplay.html",
       {
-       content
+       content : "text"
       })
