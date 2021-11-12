@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from django.shortcuts import render_to_response
 from Bot.models import Hunter, Captain, Key, Bot_Table
 from django.http import HttpResponse
+from django.template import RequestContext
 from wsgiref.util import FileWrapper
 from django.http import JsonResponse
 from django.views import View
