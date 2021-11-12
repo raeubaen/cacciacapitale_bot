@@ -98,6 +98,6 @@ def home(request):
 def teamdisplay(request):
     utils.update_team_txt()
     return render(request, "teamdisplay.html",
-      {
+      {{
        open("data/teams.txt").read(): "text"
-      })
+      }})
