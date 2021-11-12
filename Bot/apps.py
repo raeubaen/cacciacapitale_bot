@@ -15,7 +15,8 @@ class adminHandler(logging.Handler):
 
     def emit(self, record):
         for id in self.admin_ids:
-          self.bot.send_message(chat_id=id, text=self.format(record))
+           print(id)
+           self.bot.send_message(chat_id=id, text=self.format(record))
         '''
         with open("log.txt", "w") as out_file:
             out_file.write(self.format(record))
