@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
 from django.shortcuts import render, redirect
+from django.shortcuts import render_to_response
 from Bot.models import Hunter, Captain, Key, Bot_Table
 from django.http import HttpResponse
 from wsgiref.util import FileWrapper
