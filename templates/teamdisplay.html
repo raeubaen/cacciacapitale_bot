@@ -9,8 +9,199 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://github.com/cacciacapitale/cacciacapitale.github.io/blob/master/style1.css">
 <link rel="stylesheet" href="https://github.com/cacciacapitale/cacciacapitale.github.io/blob/master/font1.css">
-  
-　　<body>
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("archivio.jpg");
+  min-height: 100%;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
+</style> 
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="index.html" class="w3-bar-item w3-button w3-wide">HOME</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="news.html" class="w3-bar-item w3-button"><i class="fa fa-rss"></i> NEWS</a>
+	<a href="iscrizione.html" class="w3-bar-item w3-button"><i class="fa fa-telegram"></i> ISCRIZIONE</a>
+      <a href="archivio.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i> ARCHIVIO</a>
+      <a href="contatti.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> CONTATTI </a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="news.html" onclick="w3_close()" class="w3-bar-item w3-button"> NEWS</a>
+<a href="iscrizione.html" onclick="w3_close()" class="w3-bar-item w3-button"> ISCRIZIONE</a>  
+<a href="archivio.html" onclick="w3_close()" class="w3-bar-item w3-button"> ARCHIVIO</a>
+    <a href="contatti.html" onclick="w3_close()" class="w3-bar-item w3-button"> CONTATTI</a>
+</nav>
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+    <span class="w3-jumbo w3-hide-small"></span><br>
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium"></span><br>
+    <span class="w3-large"></span>
+    <!--<p><a href="../indizi/" target="_blank" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Vai all'Archivio</a></p>    non esiste piu', in caso cambiare link-->
+  </div> 
+</header>
+
+<!-- About Section -->
+<div class="w3-container" style="padding:128px 16px" id="about">
+  <h3 class="w3-center">ARCHIVIO</h3>
+</br> </br> <h5 class="w3-center">1°/2°/3° Caccia</h5>
+<p class="w3-center">Gli indizi delle prime cacce non sono presenti perché tutti cartacei e spudoratamente facili.<br>
+  Ogni indizio portava a un numero o a una parola chiave, <br>mentre il percorso da seguire a piedi era noto prima dell'avvio della caccia.
+</p>
+
+
+</br> </br> <h5 class="w3-center">Quarta Caccia</h5>
+<p class="w3-center">Il format prevede per la prima volta luoghi
+come soluzioni agli indizi, <br> ma essi non coincidono con le tappe da percorrere perché la caccia si è svolta al chiuso.<br>
+E' stata la prima caccia di "nuova" generazione, con indizi ben congegnati <br> che richiedono impegno e collaborazione tra i compagni di squadra.<br>
+Indizi a cura dei Senatori Serverus e Zeno.</br>
+<a href= "../case/index.html" target="_blank">Vai agli indizi della quarta caccia</a></p>
+
+</br> </br> <h5 class="w3-center">Quinta Caccia</h5>
+<p class="w3-center">Caccia vecchio stile. C'è un percorso noto a priori, ma le soluzioni degli indizi non sono luoghi.</br>
+Questo ha permesso tuttavia un po' più di varietà negli indizi.<br>  
+Indizi a cura dei senatori Liutprando e Lucifero.</br>
+<a href= "../s/index.html" target="_blank">Vai agli indizi della quinta caccia</a></p>
+
+</br> </br> <h5 class="w3-center">Sesta Caccia</h5>
+<p class="w3-center">Dalla sesta
+caccia in poi si elimina il percorso noto e le soluzioni degli indizi forniscono le tappe, <br>come il buon senso avrebbe richiesto fin dalla prima edizione.</br>
+Indizi a cura dell'Entità MEGG.</br>
+<a href= "../megg/index.html" target="_blank">Vai agli indizi della sesta caccia</a></p>
+
+</br> </br> <h5 class="w3-center">Settima Caccia</h5>
+<p class="w3-center">Caccia a forte contaminazione informatica,<br>con po' di difficoltà in più nell'esecuzione tecnica.<br>
+Indizi a cura dei senatori Serverus e Lucifero.</br>
+<a href= "../tecnocaccia/index.html" target="_blank">Vai agli indizi della settima caccia</a></p>
+
+</br> </br> <h5 class="w3-center">Ottava Caccia</h5>
+<p class="w3-center">Qui andrebbero gli indizi dell'ottava caccia, se solo li avessimo... </br>Mandate anche voi un trillo su MSN
+agli organizzatori Malpelo e Zeno per ricordare loro di inviarceli.</br>
+<a href= "../ottavacaccia/index.html" target="_blank">Vai agli indizi dell'ottava caccia...?</a></p>
+
+</br> </br> <h5 class="w3-center">Nona Caccia</h5>
+<p class="w3-center">
+Caccia a tema, a forte contaminazione crittologica: <br>
+è stato scelto il bestseller "Il nome della rosa".<br>
+Il Senatore Serverus, dopo aver contribuito a creare la caccia più difficile
+(la 7°),<br> ha ideato involontariamente quella più facile e squilibrata, <br>
+terminata in 4 ore dalla prima squadra e in 7 dalla seconda (su 12 previste).<br>
+<a href= "../ecocaccia/index.html" target="_blank">Vai agli indizi della nona caccia</a></p>
+
+</br> </br> <h5 class="w3-center">[Nona-e-3/4] - Caccia AISF</h5>
+<p class="w3-center">Uno spin-off organizzato assieme all'Associazione Italiana Studenti di Fisica, <br>
+  che ha incluso molti partecipanti alla loro prima volta. <br>Gli indizi sono frutto della cooperazione
+tra tutti i Senatori, <br>ed è probabilmente da ritenersi una delle più equilibrate.
+<br><a href= "../cacciaisf/index.html" target="_blank">Vai agli indizi della caccia AISF</a></p>
+
+</br> </br> <h5 class="w3-center">Decima Caccia</h5>
+<p class="w3-center"> Terza caccia a tema, con indizi non adatti ai deboli di cuore. <br> 
+	Gli organizzatori, ispirandosi a pilastri della cultura quali Scott Pilgrim vs The World e le attivita' di pub crawling,<br>
+	hanno ideato un'esperienza a tema trash 
+	in cui ogni indizio porta ad un pub diverso nel centro di Roma.<br>
+Indizi a cura dei Senatori Malpelo e GlutenBoi.<br>
+<a href= "../trash/index.html" target="_blank">Vai (alla cartella degli...) indizi della decima caccia</a></p>
+
+
+</br> </br> <h5 class="w3-center">Undicesima Caccia</h5>
+<p class="w3-center">Il tema musicale e la leggerezza del post-sessione avevano creato hype.<br>
+E invece è arrivato il Coronavirus. Purtroppo non tutte le ciambelle escono col buco,<br> ma se pensi lo abbiano puoi sempre metterci un dito dentro, che
+è notoriamente uno svago molto divertente.<br>
+Indizi a cura del Senatore Serverus, del neo-eletto Gluten-Boi e<br>
+occasionalmente dello sfuggente e ribelle Lucifero.
+<br><a href= "../mobydick/index.html" target="_blank">Vai agli indizi dell'undicesima caccia</a></p>
+
+</div>
+
+<!-- Grey section - focus -->
+<div class="w3-container w3-light-grey" style="padding:128px 16px">
+  <div class="w3-row-padding">
+    <div class="w3-col m6">
+      <h3>VGR!</h3>
+      <p style="text-align: justify">
+	      Durante la caccia, dopo 10 minuti dalla consegna dell'indizio si entra in modalità VGR (Verde Giallo Rosso).<br>
+        Diventa possibile inviare al Comitato un'ipotesi di ragionamento e risultati sull'indizio, ricevendo come risposta</br></br>
+	Rosso: Ragionamento sbagliato;</br>
+	Giallo: Ragionamento e/o risultati parzialmente corretti;</br> 
+	Verde: Ragionamento e risultati corretti.<br></br>
+	In assenza di questi aiuti, gli indizi potrebbero sembrare più difficili di quello che sono.<br>
+	Puoi contattare l'autore dell'indizio per dei VGR alla pagina Contatti!</br>
+
+
+
+
+<!--<i>A destra: un monitor di organizzatore nel suo habitat naturale, un attimo prima di scoprire che gli indizi già scritti dagli altri
+			portano da tutt'altra parte.</i></p>-->
+     <p><a href="contatti.html" class="w3-button w3-black"><i class="fa fa-user"> </i> Contatti</a></p>
+    </div>
+    <div class="w3-col m6">
+      <img class="w3-image w3-round-large" src="https://images.emojiterra.com/google/android-pie/512px/1f6a5.png" alt="Buildings" width="500" height="280" style="float: right;">
+    </div>
+  </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+
+</footer>
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+
 　　　　<h3> {{ text }} </h3>
 　　</body>
 
