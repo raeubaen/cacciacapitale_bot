@@ -15,16 +15,15 @@ class adminHandler(logging.Handler):
         logging.Handler.__init__(self)
 
     def emit(self, record):
-        for id in self.admin_ids:
-           print(id)
-           self.bot.send_message(chat_id=id, text=self.format(record))
-        '''
-        with open("log.txt", "w") as out_file:
-            out_file.write(self.format(record))
-        with open("log.txt", "rb") as in_file:
-            for id in self.admin_ids:
-                self.bot.send_document(chat_id=id, document=in_file)
-        '''
+        if len(self.format(record)) > 100:
+          with open("log.txt", "w") as out_file:
+              out_file.write(self.format(record))
+          with open("log.txt", "rb") as in_file:
+              for id in self.admin_ids:
+                  self.bot.send_document(id, in_file)
+        else:
+          for id in self.admin_ids:
+            self.bot.send_message(chat_id=id, text=self.format(record))
 
 class BotConfig(AppConfig):
     name = "Bot"
