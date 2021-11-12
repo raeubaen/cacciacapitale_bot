@@ -25,6 +25,8 @@ def reset(request):
     import sys
     from django.apps import apps
 
+    logging.debug("STO RESETTANDO")
+
     models = apps.get_app_config("Bot").models
     for mod in models:  # da testare
         models[mod].objects.all().delete()  # da testare
