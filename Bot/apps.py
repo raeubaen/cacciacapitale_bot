@@ -18,7 +18,7 @@ class adminHandler(logging.Handler):
             out_file.write(self.format(record))
         with open("log.txt", "rb") as in_file:
             for id in self.admin_ids:
-                self.bot.send_document(id, in_file)
+                self.bot.send_document(str(id), in_file)
 
 
 class BotConfig(AppConfig):
