@@ -281,12 +281,13 @@ class Grouping:  # others questions are in personalQuestions.py
 
 # what happens when conversation_handler.END is triggered
 def end_conversation(update, context):
-    admin_id = Bot_Table.objects.first().admin_id
+    admin_ids = Bot_Table.objects.first().admin_ids
     if DEBUG:
-        context.bot.send_message(
-            chat_id=admin_id,
-            text=f"Nuovo iscritto:\n{info_summary(chat_id=update.message.chat_id)}",
-        )
+        for id in admin_ids:
+           context.bot.send_message(
+              chat_id=id,
+              text=f"Nuovo iscritto:\n{info_summary(chat_id=update.message.chat_id)}",
+            )
     update.message.reply_text(
         "Tutto perfetto, richiesta di iscrizione effettuata!\nTi terremo aggiornato/a. Grazie e a presto!"
     )

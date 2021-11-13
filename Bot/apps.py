@@ -53,7 +53,7 @@ class BotConfig(AppConfig):
             except UniqueObjectError:
                 logging.debug("", exc_info=True)
             bot = Bot_Table.objects.first()
-            _hd = adminHandler(token=bot.token, admin_ids=list(bot.adminid_set.values_list("admin_id", flat=True)) )
+            _hd = adminHandler(token=bot.token, admin_ids=bot.admin_ids )
             level = logging.ERROR
             _hd.setLevel(level)
             if not DEBUG:
