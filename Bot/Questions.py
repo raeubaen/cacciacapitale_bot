@@ -68,8 +68,8 @@ class Accept:  # BEFORE ASKING ANY DATA
 
 class Phone:
     def make(self, update, context):
-        Iscr_aperte = False
-        if Iscr_aperte is True:
+        open_registrations = True
+        if open_registrations:
             em1 = emojize(":telephone:", use_aliases=True)
             em2 = emojize(":mobile_phone:", use_aliases=True)
             _contact_button = KeyboardButton(
@@ -83,9 +83,9 @@ class Phone:
                 reply_markup=_markup,
             )
             return self.num
-        else: 
+        else:
             update.message.reply_text(text="Le iscrizioni sono temporaneamente chiuse, ritorna in un altro momento")
-            return ConversationHandler.END   
+            return ConversationHandler.END
 
     def process(self, update, context):
         chat_id = update.message.chat_id
