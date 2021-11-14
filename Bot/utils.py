@@ -6,13 +6,14 @@ import random
 
 
 def already_in(chat_id):
+    if chat_id in Captain.objects.all().values_list("id", flat=True):
+      return True
     try:
         hunter = Hunter.objects.get(id=chat_id)
     except Hunter.DoesNotExist:
         return False
     else:
-        is_cap = (chat_id in Captain.objects.all().values_list("id", flat=True))
-        is_in = hasattr(hunter, "queue") or is_cap
+        is_in = hasattr(hunter, "queue")
         if not is_in:
             hunter.delete()
         return is_in
