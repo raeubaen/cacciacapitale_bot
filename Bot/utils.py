@@ -11,7 +11,7 @@ def already_in(chat_id):
     except Hunter.DoesNotExist:
         return False
     else:
-        is_cap = (if chat_id in Captain.objects.all().values_list("id", flat=True))
+        is_cap = (chat_id in Captain.objects.all().values_list("id", flat=True))
         is_in = hasattr(hunter, "queue") or is_cap
         if not is_in:
             hunter.delete()
