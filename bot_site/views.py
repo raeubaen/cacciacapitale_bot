@@ -50,7 +50,7 @@ def get_update(text):
 def restart(request):
     os.execl(sys.argv[0], *sys.argv)
 
-
+@login_required
 def download_players(request):
     utils.update_info_txt()
     file_path = "data/players.txt"
@@ -64,7 +64,7 @@ def download_players(request):
     except:
         return HttpResponse(status=500)
 
-
+@login_required
 def download_teams(request):
     file_path = "data/teams.txt"
     try:
