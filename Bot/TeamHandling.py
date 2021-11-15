@@ -11,6 +11,7 @@ def create_nodes(cap_anag, queue):
             queue=queue, captain=cap_list[i], number=i, status="Non chiesto"
         )
     asked_captain = Captain.objects.get(anagraphic=cap_anag)
+    
     asked_node = Node.objects.get(captain=asked_captain, queue=queue)
     asked_node.status = "Chiesto"
     asked_node.save()
@@ -30,6 +31,11 @@ def handle_queue(hunter, context):
             or status_list[i] == "Chiesto"
         ):
             node = node_list[i]  # node is chosen, if possible
+            if node.captain.id == hunter.id:
+                text="Se sei un capitano non iscriverti come cacciatore!"
+                queue.situation = "Rifiutato"
+                queue.save()
+                return
             break
     else:  # no captain lasted, all already refused
         context.bot.send_message(
