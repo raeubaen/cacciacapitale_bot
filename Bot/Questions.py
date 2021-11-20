@@ -150,7 +150,7 @@ class Age:
         def filter(self, message):
             try:
                 txt = message.text
-                return (txt.isdigit()) and 16 < int(txt) < 40
+                return (txt.isdigit()) and 1 < int(txt) < 99
             except AttributeError:
                 return False
 
