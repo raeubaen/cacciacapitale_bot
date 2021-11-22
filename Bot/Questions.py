@@ -75,7 +75,7 @@ class Phone:
             _contact_button = KeyboardButton(
                 text=em1 + " Invia il tuo numero di telefono " + em2, request_contact=True
             )
-            _markup = ReplyKeyboardMarkup([[_contact_button]], one_time_keyboard=True)
+            _markup = ReplyKeyboardMarkup([[_contact_button]])
             update.message.reply_text(
                 text="Necessitiamo del tuo numero di telefono"
                 " per poterti eventualmente contattare prima e durante la caccia."
@@ -98,7 +98,7 @@ class Phone:
 
 class Name:
     def make(self, update, context):
-        update.message.reply_text("Inserisci il tuo nome (es. Enrico)")
+        update.message.reply_text("Inserisci il tuo nome")
         return self.num
 
     def process(self, update, context):
@@ -121,7 +121,7 @@ class Name:
 
 class Surname:
     def make(self, update, context):
-        update.message.reply_text("Inserisci il tuo cognome (es. Berlinguer)")
+        update.message.reply_text("Inserisci il tuo cognome")
         return self.num
 
     def process(self, update, context):
@@ -137,7 +137,7 @@ class Surname:
 
 class Age:
     def make(self, update, context):
-        update.message.reply_text("Quanti anni hai? Es. 20")
+        update.message.reply_text("Quanti anni hai? Es. 22")
         return self.num
 
     def process(self, update, context):
@@ -163,7 +163,7 @@ class Uni:
     def make(self, update, context):
         update.message.reply_text(
             "Frequenti l'università? Se sì, indica facoltà, ateneo ed anno di corso. "
-            "Es. Fisica alla Sapienza, primo anno"
+            "Es. Fisica alla Sapienza, terzo anno"
         )
         return self.num
 
