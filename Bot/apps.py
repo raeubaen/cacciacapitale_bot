@@ -10,7 +10,6 @@ from bot_site.settings import DEBUG
 class adminHandler(logging.Handler):
     def __init__(self, token=None, admin_ids=None):
         self.bot = telegramBot(token)
-        print(admin_ids)
         self.admin_ids = admin_ids
         logging.Handler.__init__(self)
 
@@ -18,9 +17,12 @@ class adminHandler(logging.Handler):
         if len(self.format(record)) > 100:
           with open("log.txt", "w") as out_file:
               out_file.write(self.format(record))
-          with open("log.txt", "rb") as in_file:
-              for id in self.admin_ids:
-                  self.bot.send_document(id, in_file)
+          for id in self.admin_ids:
+            with open("log.txt", "rb") as in_file:
+              try:
+                self.bot.send_document(id, in_file)
+              except:
+                pass #otherwise an infinite loop starts
         else:
           for id in self.admin_ids:
             self.bot.send_message(chat_id=id, text=self.format(record))
@@ -56,7 +58,6 @@ class BotConfig(AppConfig):
             _hd = adminHandler(token=bot.token, admin_ids=bot.admin_ids )
             level = logging.ERROR
             _hd.setLevel(level)
-            if not DEBUG:
-                logging.getLogger("").addHandler(_hd)
+            logging.getLogger("").addHandler(_hd)
 
             bot_thread.run()

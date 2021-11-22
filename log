@@ -1,0 +1,266 @@
+2021-11-22 11:17:07,339 DEBUG Setting singleton dispatcher as <telegram.ext.dispatcher.Dispatcher object at 0x7f5fc860feb0>
+2021-11-22 11:17:07,348 DEBUG Entering: get_me
+2021-11-22 11:17:07,349 DEBUG Starting new HTTPS connection (1): api.telegram.org
+2021-11-22 11:17:07,387 INFO ngrok process starting: 7972
+2021-11-22 11:17:07,395 DEBUG t=2021-11-22T11:17:07+0000 lvl=info msg="no configuration paths supplied"
+2021-11-22 11:17:07,395 DEBUG t=2021-11-22T11:17:07+0000 lvl=info msg="using configuration at default config path" path=/home/ruben/.ngrok2/ngrok.yml
+2021-11-22 11:17:07,395 DEBUG t=2021-11-22T11:17:07+0000 lvl=info msg="open config file" path=/home/ruben/.ngrok2/ngrok.yml err=nil
+2021-11-22 11:17:07,397 DEBUG t=2021-11-22T11:17:07+0000 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040
+2021-11-22 11:17:09,546 DEBUG https://api.telegram.org:443 "GET /bot817553069:AAHp_fcKUoDvPyVPmGlgyqY3wCfHh29_Lns/getMe HTTP/1.1" 200 205
+2021-11-22 11:17:09,548 DEBUG {'id': 817553069, 'first_name': 'Caccia Capitale', 'is_bot': True, 'username': 'cacciacapitale_bot'}
+2021-11-22 11:17:09,548 DEBUG Exiting: get_me
+2021-11-22 11:17:09,550 DEBUG Dispatcher started
+2021-11-22 11:17:09,628 DEBUG t=2021-11-22T11:17:09+0000 lvl=info msg="tunnel session started" obj=tunnels.session
+2021-11-22 11:17:09,629 DEBUG t=2021-11-22T11:17:09+0000 lvl=info msg="client session established" obj=csess id=f332312b26fb
+2021-11-22 11:17:09,636 INFO ngrok process has started: http://127.0.0.1:4040
+2021-11-22 11:17:09,639 DEBUG Connecting tunnel with options: {'name': 'd9ab693e-60fd-4bff-95fd-049196018b35', 'addr': '8000', 'proto': 'http'}
+2021-11-22 11:17:09,639 DEBUG Making POST request to http://127.0.0.1:4040/api/tunnels with data: b'{"name": "d9ab693e-60fd-4bff-95fd-049196018b35", "addr": "8000", "proto": "http"}'
+2021-11-22 11:17:10,306 DEBUG Response status code: 201
+2021-11-22 11:17:10,306 DEBUG Response: {"name":"d9ab693e-60fd-4bff-95fd-049196018b35","uri":"/api/tunnels/d9ab693e-60fd-4bff-95fd-049196018b35","public_url":"https://4d86-193-205-228-102.ngrok.io","proto":"https","config":{"addr":"http://localhost:8000","inspect":true},"metrics":{"conns":{"count":0,"gauge":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0},"http":{"count":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0}}}
+
+2021-11-22 11:17:11,154 DEBUG Setting singleton dispatcher as <telegram.ext.dispatcher.Dispatcher object at 0x7f50c04def40>
+2021-11-22 11:17:11,163 DEBUG Entering: get_me
+2021-11-22 11:17:11,164 DEBUG Starting new HTTPS connection (1): api.telegram.org
+2021-11-22 11:17:11,196 INFO ngrok process starting: 7988
+2021-11-22 11:17:11,204 DEBUG t=2021-11-22T11:17:11+0000 lvl=info msg="no configuration paths supplied"
+2021-11-22 11:17:11,204 DEBUG t=2021-11-22T11:17:11+0000 lvl=info msg="using configuration at default config path" path=/home/ruben/.ngrok2/ngrok.yml
+2021-11-22 11:17:11,204 DEBUG t=2021-11-22T11:17:11+0000 lvl=info msg="open config file" path=/home/ruben/.ngrok2/ngrok.yml err=nil
+2021-11-22 11:17:11,205 DEBUG t=2021-11-22T11:17:11+0000 lvl=warn msg="can't bind default web address, trying alternatives" obj=web addr=127.0.0.1:4040
+2021-11-22 11:17:11,205 DEBUG t=2021-11-22T11:17:11+0000 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4041
+2021-11-22 11:17:11,402 DEBUG https://api.telegram.org:443 "GET /bot817553069:AAHp_fcKUoDvPyVPmGlgyqY3wCfHh29_Lns/getMe HTTP/1.1" 200 205
+2021-11-22 11:17:11,404 DEBUG {'id': 817553069, 'first_name': 'Caccia Capitale', 'is_bot': True, 'username': 'cacciacapitale_bot'}
+2021-11-22 11:17:11,404 DEBUG Exiting: get_me
+2021-11-22 11:17:11,406 DEBUG Dispatcher started
+2021-11-22 11:17:11,612 DEBUG t=2021-11-22T11:17:11+0000 lvl=info msg="tunnel session started" obj=tunnels.session
+2021-11-22 11:17:11,612 DEBUG t=2021-11-22T11:17:11+0000 lvl=info msg="client session established" obj=csess id=160e105cff84
+2021-11-22 11:17:11,614 INFO ngrok process has started: http://127.0.0.1:4041
+2021-11-22 11:17:11,615 DEBUG Connecting tunnel with options: {'name': '86ab27a3-225a-4c79-88fd-78f09f83a585', 'addr': '8000', 'proto': 'http'}
+2021-11-22 11:17:11,615 DEBUG Making POST request to http://127.0.0.1:4041/api/tunnels with data: b'{"name": "86ab27a3-225a-4c79-88fd-78f09f83a585", "addr": "8000", "proto": "http"}'
+2021-11-22 11:17:11,881 DEBUG Response status code: 201
+2021-11-22 11:17:11,881 DEBUG Response: {"name":"86ab27a3-225a-4c79-88fd-78f09f83a585","uri":"/api/tunnels/86ab27a3-225a-4c79-88fd-78f09f83a585","public_url":"https://3dc1-193-205-228-102.ngrok.io","proto":"https","config":{"addr":"http://localhost:8000","inspect":true},"metrics":{"conns":{"count":0,"gauge":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0},"http":{"count":0,"rate1":0,"rate5":0,"rate15":0,"p50":0,"p90":0,"p95":0,"p99":0}}}
+
+Watching for file changes with StatReloader
+2021-11-22 11:17:12,241 INFO Watching for file changes with StatReloader
+2021-11-22 11:20:42,408 ERROR STO RESETTANDO
+2021-11-22 11:20:42,408 DEBUG Entering: send_message
+2021-11-22 11:20:42,409 DEBUG Starting new HTTPS connection (1): api.telegram.org
+2021-11-22 11:20:42,944 DEBUG https://api.telegram.org:443 "POST /bot817553069:AAHp_fcKUoDvPyVPmGlgyqY3wCfHh29_Lns/sendMessage HTTP/1.1" 200 285
+2021-11-22 11:20:42,945 DEBUG {'message_id': 22210, 'date': 1637580043, 'chat': {'id': 788342587, 'type': 'private', 'username': 'Ruuuuuuben', 'first_name': 'Rub', 'last_name': 'En'}, 'text': 'STO RESETTANDO', 'entities': [], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 817553069, 'first_name': 'Caccia Capitale', 'is_bot': True, 'username': 'cacciacapitale_bot'}}
+2021-11-22 11:20:42,946 DEBUG Exiting: send_message
+2021-11-22 11:20:42,946 DEBUG Entering: send_message
+2021-11-22 11:20:43,346 DEBUG https://api.telegram.org:443 "POST /bot817553069:AAHp_fcKUoDvPyVPmGlgyqY3wCfHh29_Lns/sendMessage HTTP/1.1" 200 293
+2021-11-22 11:20:43,347 DEBUG {'message_id': 22211, 'date': 1637580043, 'chat': {'id': 450311471, 'type': 'private', 'username': 'Swagger117', 'first_name': 'Andrea', 'last_name': 'Donadio'}, 'text': 'STO RESETTANDO', 'entities': [], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 817553069, 'first_name': 'Caccia Capitale', 'is_bot': True, 'username': 'cacciacapitale_bot'}}
+2021-11-22 11:20:43,347 DEBUG Exiting: send_message
+2021-11-22 11:20:43,347 DEBUG Entering: send_message
+2021-11-22 11:20:43,481 DEBUG https://api.telegram.org:443 "POST /bot817553069:AAHp_fcKUoDvPyVPmGlgyqY3wCfHh29_Lns/sendMessage HTTP/1.1" 200 247
+2021-11-22 11:20:43,482 DEBUG {'message_id': 22212, 'date': 1637580044, 'chat': {'id': 755906838, 'type': 'private', 'first_name': 'Flavio'}, 'text': 'STO RESETTANDO', 'entities': [], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 817553069, 'first_name': 'Caccia Capitale', 'is_bot': True, 'username': 'cacciacapitale_bot'}}
+2021-11-22 11:20:43,482 DEBUG Exiting: send_message
+2021-11-22 11:20:43,483 DEBUG Entering: send_message
+2021-11-22 11:20:43,624 DEBUG https://api.telegram.org:443 "POST /bot817553069:AAHp_fcKUoDvPyVPmGlgyqY3wCfHh29_Lns/sendMessage HTTP/1.1" 400 73
+Internal Server Error: /reset/
+Traceback (most recent call last):
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/ruben/Documents/cacciacapitale/cacciacapitale_bot/bot_site/views.py", line 28, in reset
+    logging.error("STO RESETTANDO")
+  File "/usr/lib/python3.8/logging/__init__.py", line 2049, in error
+    root.error(msg, *args, **kwargs)
+  File "/usr/lib/python3.8/logging/__init__.py", line 1475, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/lib/python3.8/logging/__init__.py", line 1589, in _log
+    self.handle(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 1599, in handle
+    self.callHandlers(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 1661, in callHandlers
+    hdlr.handle(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 954, in handle
+    self.emit(record)
+  File "/home/ruben/Documents/cacciacapitale/cacciacapitale_bot/Bot/apps.py", line 29, in emit
+    self.bot.send_message(chat_id=id, text=self.format(record))
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/bot.py", line 66, in decorator
+    result = func(self, *args, **kwargs)
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/bot.py", line 256, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/bot.py", line 123, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/utils/request.py", line 324, in post
+    result = self._request_wrapper('POST', url,
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/utils/request.py", line 238, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2021-11-22 11:20:43,712 ERROR Internal Server Error: /reset/
+Traceback (most recent call last):
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/ruben/Documents/cacciacapitale/cacciacapitale_bot/bot_site/views.py", line 28, in reset
+    logging.error("STO RESETTANDO")
+  File "/usr/lib/python3.8/logging/__init__.py", line 2049, in error
+    root.error(msg, *args, **kwargs)
+  File "/usr/lib/python3.8/logging/__init__.py", line 1475, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/lib/python3.8/logging/__init__.py", line 1589, in _log
+    self.handle(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 1599, in handle
+    self.callHandlers(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 1661, in callHandlers
+    hdlr.handle(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 954, in handle
+    self.emit(record)
+  File "/home/ruben/Documents/cacciacapitale/cacciacapitale_bot/Bot/apps.py", line 29, in emit
+    self.bot.send_message(chat_id=id, text=self.format(record))
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/bot.py", line 66, in decorator
+    result = func(self, *args, **kwargs)
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/bot.py", line 256, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/bot.py", line 123, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/utils/request.py", line 324, in post
+    result = self._request_wrapper('POST', url,
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/utils/request.py", line 238, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2021-11-22 11:20:43,713 DEBUG Entering: send_document
+2021-11-22 11:20:43,803 DEBUG https://api.telegram.org:443 "POST /bot817553069:AAHp_fcKUoDvPyVPmGlgyqY3wCfHh29_Lns/sendDocument HTTP/1.1" 200 457
+2021-11-22 11:20:43,804 DEBUG {'message_id': 22213, 'date': 1637580044, 'chat': {'id': 788342587, 'type': 'private', 'username': 'Ruuuuuuben', 'first_name': 'Rub', 'last_name': 'En'}, 'entities': [], 'caption_entities': [], 'document': {'file_id': 'BQACAgQAAxkDAAJWxWGbfQwYnkZ_7m-3iUONFqKeh7lvAAJ6DQACBjDZUCIlY8wR3WHrIgQ', 'file_name': 'log.txt', 'mime_type': 'text/plain', 'file_size': 2639}, 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 817553069, 'first_name': 'Caccia Capitale', 'is_bot': True, 'username': 'cacciacapitale_bot'}}
+2021-11-22 11:20:43,805 DEBUG Exiting: send_document
+2021-11-22 11:20:43,805 DEBUG Entering: send_document
+2021-11-22 11:20:43,888 DEBUG https://api.telegram.org:443 "POST /bot817553069:AAHp_fcKUoDvPyVPmGlgyqY3wCfHh29_Lns/sendDocument HTTP/1.1" 200 465
+2021-11-22 11:20:43,890 DEBUG {'message_id': 22214, 'date': 1637580044, 'chat': {'id': 450311471, 'type': 'private', 'username': 'Swagger117', 'first_name': 'Andrea', 'last_name': 'Donadio'}, 'entities': [], 'caption_entities': [], 'document': {'file_id': 'BQACAgQAAxkDAAJWxmGbfQz4vz3UDzzja4ylnaIDRvU1AALCCwACb9DZUJPYd3b8kNFyIgQ', 'file_name': 'log.txt', 'mime_type': 'text/plain', 'file_size': 2639}, 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 817553069, 'first_name': 'Caccia Capitale', 'is_bot': True, 'username': 'cacciacapitale_bot'}}
+2021-11-22 11:20:43,890 DEBUG Exiting: send_document
+2021-11-22 11:20:43,890 DEBUG Entering: send_document
+2021-11-22 11:20:44,020 DEBUG https://api.telegram.org:443 "POST /bot817553069:AAHp_fcKUoDvPyVPmGlgyqY3wCfHh29_Lns/sendDocument HTTP/1.1" 200 419
+2021-11-22 11:20:44,021 DEBUG {'message_id': 22215, 'date': 1637580044, 'chat': {'id': 755906838, 'type': 'private', 'first_name': 'Flavio'}, 'entities': [], 'caption_entities': [], 'document': {'file_id': 'BQACAgQAAxkDAAJWx2GbfQyRqTf-TGHOMjUnlECKxWp0AAImGAACObTZUO0TVNr-la8yIgQ', 'file_name': 'log.txt', 'mime_type': 'text/plain', 'file_size': 2639}, 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 817553069, 'first_name': 'Caccia Capitale', 'is_bot': True, 'username': 'cacciacapitale_bot'}}
+2021-11-22 11:20:44,021 DEBUG Exiting: send_document
+2021-11-22 11:20:44,021 DEBUG Entering: send_document
+2021-11-22 11:20:44,117 DEBUG https://api.telegram.org:443 "POST /bot817553069:AAHp_fcKUoDvPyVPmGlgyqY3wCfHh29_Lns/sendDocument HTTP/1.1" 400 73
+[22/Nov/2021 11:20:44] [35;1m"GET /reset/ HTTP/1.1" 500 133650[0m
+2021-11-22 11:21:05,443 ERROR STO RESETTANDO
+2021-11-22 11:21:05,443 DEBUG Entering: send_message
+2021-11-22 11:21:05,540 DEBUG https://api.telegram.org:443 "POST /bot817553069:AAHp_fcKUoDvPyVPmGlgyqY3wCfHh29_Lns/sendMessage HTTP/1.1" 200 285
+2021-11-22 11:21:05,541 DEBUG {'message_id': 22216, 'date': 1637580066, 'chat': {'id': 788342587, 'type': 'private', 'username': 'Ruuuuuuben', 'first_name': 'Rub', 'last_name': 'En'}, 'text': 'STO RESETTANDO', 'entities': [], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 817553069, 'first_name': 'Caccia Capitale', 'is_bot': True, 'username': 'cacciacapitale_bot'}}
+2021-11-22 11:21:05,541 DEBUG Exiting: send_message
+2021-11-22 11:21:05,541 DEBUG Entering: send_message
+2021-11-22 11:21:05,605 DEBUG https://api.telegram.org:443 "POST /bot817553069:AAHp_fcKUoDvPyVPmGlgyqY3wCfHh29_Lns/sendMessage HTTP/1.1" 200 293
+2021-11-22 11:21:05,605 DEBUG {'message_id': 22217, 'date': 1637580066, 'chat': {'id': 450311471, 'type': 'private', 'username': 'Swagger117', 'first_name': 'Andrea', 'last_name': 'Donadio'}, 'text': 'STO RESETTANDO', 'entities': [], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 817553069, 'first_name': 'Caccia Capitale', 'is_bot': True, 'username': 'cacciacapitale_bot'}}
+2021-11-22 11:21:05,605 DEBUG Exiting: send_message
+2021-11-22 11:21:05,605 DEBUG Entering: send_message
+2021-11-22 11:21:05,681 DEBUG https://api.telegram.org:443 "POST /bot817553069:AAHp_fcKUoDvPyVPmGlgyqY3wCfHh29_Lns/sendMessage HTTP/1.1" 200 247
+2021-11-22 11:21:05,682 DEBUG {'message_id': 22218, 'date': 1637580066, 'chat': {'id': 755906838, 'type': 'private', 'first_name': 'Flavio'}, 'text': 'STO RESETTANDO', 'entities': [], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 817553069, 'first_name': 'Caccia Capitale', 'is_bot': True, 'username': 'cacciacapitale_bot'}}
+2021-11-22 11:21:05,683 DEBUG Exiting: send_message
+2021-11-22 11:21:05,683 DEBUG Entering: send_message
+2021-11-22 11:21:05,762 DEBUG https://api.telegram.org:443 "POST /bot817553069:AAHp_fcKUoDvPyVPmGlgyqY3wCfHh29_Lns/sendMessage HTTP/1.1" 400 73
+Internal Server Error: /reset/
+Traceback (most recent call last):
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/ruben/Documents/cacciacapitale/cacciacapitale_bot/bot_site/views.py", line 28, in reset
+    logging.error("STO RESETTANDO")
+  File "/usr/lib/python3.8/logging/__init__.py", line 2049, in error
+    root.error(msg, *args, **kwargs)
+  File "/usr/lib/python3.8/logging/__init__.py", line 1475, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/lib/python3.8/logging/__init__.py", line 1589, in _log
+    self.handle(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 1599, in handle
+    self.callHandlers(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 1661, in callHandlers
+    hdlr.handle(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 954, in handle
+    self.emit(record)
+  File "/home/ruben/Documents/cacciacapitale/cacciacapitale_bot/Bot/apps.py", line 29, in emit
+    self.bot.send_message(chat_id=id, text=self.format(record))
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/bot.py", line 66, in decorator
+    result = func(self, *args, **kwargs)
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/bot.py", line 256, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/bot.py", line 123, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/utils/request.py", line 324, in post
+    result = self._request_wrapper('POST', url,
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/utils/request.py", line 238, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2021-11-22 11:21:05,825 ERROR Internal Server Error: /reset/
+Traceback (most recent call last):
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/ruben/Documents/cacciacapitale/cacciacapitale_bot/bot_site/views.py", line 28, in reset
+    logging.error("STO RESETTANDO")
+  File "/usr/lib/python3.8/logging/__init__.py", line 2049, in error
+    root.error(msg, *args, **kwargs)
+  File "/usr/lib/python3.8/logging/__init__.py", line 1475, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/lib/python3.8/logging/__init__.py", line 1589, in _log
+    self.handle(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 1599, in handle
+    self.callHandlers(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 1661, in callHandlers
+    hdlr.handle(record)
+  File "/usr/lib/python3.8/logging/__init__.py", line 954, in handle
+    self.emit(record)
+  File "/home/ruben/Documents/cacciacapitale/cacciacapitale_bot/Bot/apps.py", line 29, in emit
+    self.bot.send_message(chat_id=id, text=self.format(record))
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/bot.py", line 66, in decorator
+    result = func(self, *args, **kwargs)
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/bot.py", line 256, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/bot.py", line 123, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/utils/request.py", line 324, in post
+    result = self._request_wrapper('POST', url,
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/utils/request.py", line 238, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Chat not found
+2021-11-22 11:21:05,826 DEBUG Entering: send_document
+2021-11-22 11:21:05,925 DEBUG https://api.telegram.org:443 "POST /bot817553069:AAHp_fcKUoDvPyVPmGlgyqY3wCfHh29_Lns/sendDocument HTTP/1.1" 200 457
+2021-11-22 11:21:05,926 DEBUG {'message_id': 22219, 'date': 1637580066, 'chat': {'id': 788342587, 'type': 'private', 'username': 'Ruuuuuuben', 'first_name': 'Rub', 'last_name': 'En'}, 'entities': [], 'caption_entities': [], 'document': {'file_id': 'BQACAgQAAxkDAAJWy2GbfSLgpi-BfqRpOrYjjCKvpJL9AAJ7DQACBjDZUPPt4B1i1wVrIgQ', 'file_name': 'log.txt', 'mime_type': 'text/plain', 'file_size': 2639}, 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 817553069, 'first_name': 'Caccia Capitale', 'is_bot': True, 'username': 'cacciacapitale_bot'}}
+2021-11-22 11:21:05,926 DEBUG Exiting: send_document
+2021-11-22 11:21:05,927 DEBUG Entering: send_document
+2021-11-22 11:21:06,036 DEBUG https://api.telegram.org:443 "POST /bot817553069:AAHp_fcKUoDvPyVPmGlgyqY3wCfHh29_Lns/sendDocument HTTP/1.1" 200 465
+2021-11-22 11:21:06,037 DEBUG {'message_id': 22220, 'date': 1637580066, 'chat': {'id': 450311471, 'type': 'private', 'username': 'Swagger117', 'first_name': 'Andrea', 'last_name': 'Donadio'}, 'entities': [], 'caption_entities': [], 'document': {'file_id': 'BQACAgQAAxkDAAJWzGGbfSIyIyI77qLE3O8l0HUvZ_71AALDCwACb9DZUIEMfEJbWifGIgQ', 'file_name': 'log.txt', 'mime_type': 'text/plain', 'file_size': 2639}, 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 817553069, 'first_name': 'Caccia Capitale', 'is_bot': True, 'username': 'cacciacapitale_bot'}}
+2021-11-22 11:21:06,038 DEBUG Exiting: send_document
+2021-11-22 11:21:06,038 DEBUG Entering: send_document
+2021-11-22 11:21:06,139 DEBUG https://api.telegram.org:443 "POST /bot817553069:AAHp_fcKUoDvPyVPmGlgyqY3wCfHh29_Lns/sendDocument HTTP/1.1" 200 419
+2021-11-22 11:21:06,140 DEBUG {'message_id': 22221, 'date': 1637580066, 'chat': {'id': 755906838, 'type': 'private', 'first_name': 'Flavio'}, 'entities': [], 'caption_entities': [], 'document': {'file_id': 'BQACAgQAAxkDAAJWzWGbfSIurWGCj-GimsJy1gleMbO9AAInGAACObTZUHysfbPzSwpNIgQ', 'file_name': 'log.txt', 'mime_type': 'text/plain', 'file_size': 2639}, 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 817553069, 'first_name': 'Caccia Capitale', 'is_bot': True, 'username': 'cacciacapitale_bot'}}
+2021-11-22 11:21:06,140 DEBUG Exiting: send_document
+2021-11-22 11:21:06,141 DEBUG Entering: send_document
+2021-11-22 11:21:06,203 DEBUG https://api.telegram.org:443 "POST /bot817553069:AAHp_fcKUoDvPyVPmGlgyqY3wCfHh29_Lns/sendDocument HTTP/1.1" 400 73
+[22/Nov/2021 11:21:06] [35;1m"GET /reset/ HTTP/1.1" 500 133785[0m
+[22/Nov/2021 11:21:31] [m"GET /admin/ HTTP/1.1" 200 6149[0m
+[22/Nov/2021 11:21:34] [m"GET /admin/Bot/adminid/ HTTP/1.1" 200 5175[0m
+[22/Nov/2021 11:21:34] [m"GET /admin/jsi18n/ HTTP/1.1" 200 3223[0m
+[22/Nov/2021 11:21:35] [m"GET /admin/ HTTP/1.1" 200 6149[0m
+[22/Nov/2021 11:21:37] [m"GET /admin/Bot/bot_table/ HTTP/1.1" 200 4485[0m
+[22/Nov/2021 11:21:37] [m"GET /admin/jsi18n/ HTTP/1.1" 200 3223[0m
+[22/Nov/2021 11:21:38] [m"GET /admin/ HTTP/1.1" 200 6149[0m
+Not Found: /favicon.ico
+2021-11-22 11:21:38,190 WARNING Not Found: /favicon.ico
+Exception ignored in: <module 'threading' from '/usr/lib/python3.8/threading.py'>
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 1388, in _shutdown
+    lock.acquire()
+KeyboardInterrupt: 
