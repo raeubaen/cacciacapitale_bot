@@ -25,7 +25,7 @@ class Accept:  # BEFORE ASKING ANY DATA
                 " rivolgiti agli organizzatori (visita la sezione Contatti al sito www.cacciacapitale.it)"
             )
             return ConversationHandler.END
-        _markup = ReplyKeyboardMarkup([["Si"], ["No"]], one_time_keyboard=True)
+        _markup = ReplyKeyboardMarkup([["Si"], ["No"]], one_time_keyboard=True, resize_keyboard=True)
         update.message.reply_text(""
             "Benvenuto nel Bot di Iscrizione a Caccia Capitale.\n"
             "La caccia sara' prossimamente in una sera da definire.\n"
@@ -72,10 +72,12 @@ class Phone:
         if open_registrations:
             em1 = emojize(":telephone:", use_aliases=True)
             em2 = emojize(":mobile_phone:", use_aliases=True)
+
             _contact_button = KeyboardButton(
-                text=em1 + " Invia il tuo numero di telefono " + em2, request_contact=True
+                text=em1 + " Invia il tuo numero di telefono " + em2, request_contact=True, resize_keyboard=True, one_time_keyboard=True
             )
             _markup = ReplyKeyboardMarkup([[_contact_button]])
+
             update.message.reply_text(
                 text="Necessitiamo del tuo numero di telefono"
                 " per poterti eventualmente contattare prima e durante la caccia."

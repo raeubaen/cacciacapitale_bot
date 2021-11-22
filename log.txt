@@ -1,0 +1,29 @@
+Update: {'update_id': 144973907, 'message': {'message_id': 22256, 'date': 1637587512, 'chat': {'id': 788342587, 'type': 'private', 'username': 'Ruuuuuuben', 'first_name': 'Rub', 'last_name': 'En'}, 'text': 'Si', 'entities': [], 'caption_entities': [], 'photo': [], 'new_chat_members': [], 'new_chat_photo': [], 'delete_chat_photo': False, 'group_chat_created': False, 'supergroup_chat_created': False, 'channel_chat_created': False, 'from': {'id': 788342587, 'first_name': 'Rub', 'is_bot': False, 'last_name': 'En', 'username': 'Ruuuuuuben', 'language_code': 'en'}}}
+Traceback (most recent call last):
+  File "/home/ruben/Documents/cacciacapitale/cacciacapitale_bot/Bot/bot_thread.py", line 23, in error
+    raise context.error
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/ext/dispatcher.py", line 340, in process_update
+    handler.handle_update(update, self, check, context)
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/ext/conversationhandler.py", line 465, in handle_update
+    new_state = handler.handle_update(update, dispatcher, check_result, context)
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/ext/handler.py", line 119, in handle_update
+    return self.callback(update, context)
+  File "/home/ruben/Documents/cacciacapitale/cacciacapitale_bot/Bot/Questions.py", line 55, in process
+    return self.make_new(update, context)
+  File "/home/ruben/Documents/cacciacapitale/cacciacapitale_bot/Bot/Questions.py", line 87, in make
+    update.message.reply_text(
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/message.py", line 515, in reply_text
+    return self.bot.send_message(self.chat_id, *args, **kwargs)
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/bot.py", line 67, in decorator
+    result = func(*args, **kwargs)
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/bot.py", line 346, in send_message
+    return self._message(url, data, disable_notification=disable_notification,
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/bot.py", line 175, in _message
+    result = self._request.post(url, data, timeout=timeout)
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/utils/request.py", line 330, in post
+    result = self._request_wrapper('POST', url,
+  File "/home/ruben/Documents/cacciacapitale/env/lib/python3.8/site-packages/telegram/utils/request.py", line 244, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Can't parse inline keyboard button: text buttons are unallowed in the inline keyboard
