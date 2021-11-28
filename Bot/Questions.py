@@ -291,6 +291,9 @@ def end_conversation(update, context):
               text=f"Nuovo iscritto:\n{info_summary(chat_id=update.message.chat_id)}",
             )
     update.message.reply_text(
+        "ALERT! Ti preghiamo di NON cancellare la chat con questo bot. Per annullare l'iscrizione scrivere /stop. In caso di dubbi contattare cacciacapitale@gmail.com"
+    )
+    update.message.reply_text(
         "Tutto perfetto, richiesta di iscrizione effettuata!\nTi terremo aggiornato/a. Grazie e a presto!"
     )
     return ConversationHandler.END
