@@ -68,7 +68,7 @@ class Accept:  # BEFORE ASKING ANY DATA
 
 class Phone:
     def make(self, update, context):
-        open_registrations = True
+        open_registrations = False
         if open_registrations:
             em1 = emojize(":telephone:", use_aliases=True)
             em2 = emojize(":mobile_phone:", use_aliases=True)
